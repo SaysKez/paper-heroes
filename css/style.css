@@ -80,7 +80,7 @@ ul li {
 
 .text-box {
     position: absolute; 
-    z-index: 2;   
+    z-index: 50;   
     background-color: #FFDA00;
     width: auto;
     height: auto;
@@ -113,8 +113,21 @@ ul li {
 
 
 
-/* ICONS */
 
+/* PROPS */
+.prop {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+}
+
+#laser {
+    left: 520%;
+    height: 120vh;        
+}
+
+
+/* ICONS */
 .icon {
     z-index: 100;
     position: absolute;
