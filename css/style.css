@@ -1,0 +1,132 @@
+/* 1. CSS RESET */
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    line-height: 1em;
+}
+
+body {
+    overflow-y: hidden;
+    white-space: nowrap;
+    /* background-color: #0432B2;
+    remove third building layer if using bg */
+    font-family: Avenir, sans-serif;
+    color: #000;
+}
+
+p {
+    font-style: italic; 
+    font-size: 1em;  
+    line-height: 1.618em;      
+}
+
+h1, h2, h3, h4 {
+    font-family: Liquorstore, sans-serif;
+}
+
+h3 {
+    font-style: italic;
+    font-size: 1.618em;
+    margin-bottom: 0.382em;
+}
+
+ul li {
+    list-style: none;
+    line-height: 1.618em;          
+}
+
+.background {
+    background-image: url("../images/cityscape2.svg");
+    background-repeat: repeat-x;
+    width: 800%;
+    height: 100vh;
+    /*
+    position: absolute;
+    top:0;
+    left:0; */
+}
+
+/* TEXT BOXES */
+
+.text-box {
+    position: absolute; 
+    z-index: 2;   
+    background-color: #FFDA00;
+    width: auto;
+    height: auto;
+    padding: 1em;    
+    -webkit-box-shadow: -10px 6px 0px 0px rgba(0,0,0,1);
+    -moz-box-shadow: -10px 6px 0px 0px rgba(0,0,0,1);
+    box-shadow: -10px 6px 0px 0px rgba(0,0,0,1);
+}
+
+.text-box span {
+    font-family: Liquorstore, sans-serif;    
+    font-size:  1em;
+}
+
+
+
+
+/* ICONS */
+
+.icon {
+    z-index: 100;
+    position: absolute;
+    bottom: 0;  
+    height: 80vh;    
+}
+
+
+
+#super {
+    left: 100%;
+}
+
+.super-bio {
+    left: 130%;
+    bottom: 40%;
+}
+
+#agent {
+    left: 150%;
+}
+
+#robot {
+    left: 200%;
+    height: 220vh;
+}
+
+#powers {
+    left: 295%;
+    bottom: 25%;
+}
+
+#hammer {
+    left: 320%;
+}
+
+#scientist {
+    left: 370%;
+}
+
+#armour {
+    left: 450%;
+}
+
+#punch {
+    left: 485%;
+}
+
+#villain {
+    left: 540%;
+}
+
+#sidekick {
+    left: 570%;
+}
+
+#force {
+    left: 640%;
+}
