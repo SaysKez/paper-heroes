@@ -87,3 +87,22 @@ function MouseWheelHandler(e) {
     /*
     var agentHair = new TweenMax.to('#agent-hair', 0.5, {repeat:-1, yoyo:true, rotation:3, scaleY:0.97, scaleX:0.97, transformOrigin: "100% 70%"}, 0);
 */
+
+
+var overlay = new ScrollMagic.Controller({vertical: false});
+
+//animation.
+var force = new TimelineMax();
+force.to('#force-l', 1, {transformOrigin: "50% 50%", scale:100,}, 0.2)
+.to('#force-r', 1, {transformOrigin: "50% 50%", scale:100}, 0.2)
+.fromTo('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"}, {display:"block", borderRadius:"0", scale:1});
+
+
+//scene
+var overlayTrigger = new ScrollMagic.Scene({
+  triggerElement: "#force",
+  reverse: false,
+})
+.setTween(force)
+.addIndicators()
+.addTo(overlay);
