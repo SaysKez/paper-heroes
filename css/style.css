@@ -15,6 +15,30 @@ body {
     color: #000;
 }
 
+
+/* BUTTONS */
+.button {
+    position: absolute;
+    z-index: 300;
+    left: 20%;
+    padding: 0.382em 0.618em;
+    border: 0.236em solid red;
+    /*
+    -webkit-box-shadow: -10px 6px 0px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: -10px 6px 0px 0px rgba(0,0,0,0.15);
+    box-shadow: -10px 6px 0px 0px rgba(0,0,0,0.15);
+    */
+}
+
+
+/* TYPOGRAPHY */
+a {
+    text-decoration: none;
+    font-family: Liquorstore, sans-serif; 
+    color: #000; 
+    font-size: 1.618em;    
+}
+
 p {
     font-style: italic; 
     font-size: 1em;  
