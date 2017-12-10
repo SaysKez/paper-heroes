@@ -17,17 +17,29 @@ body {
 
 
 /* BUTTONS */
-.button {
-    position: absolute;
+.btn {
     z-index: 300;
     left: 20%;
     padding: 0.382em 0.618em;
-    border: 0.236em solid red;
     /*
     -webkit-box-shadow: -10px 6px 0px 0px rgba(0,0,0,0.15);
     -moz-box-shadow: -10px 6px 0px 0px rgba(0,0,0,0.15);
     box-shadow: -10px 6px 0px 0px rgba(0,0,0,0.15);
     */
+}
+
+.btn-red {
+    position: absolute;
+    left: 20%;
+    border: 0.236em solid red;
+}
+
+.btn-white {
+    display: block;
+    margin: auto;
+    width: 4em;
+    text-align: center;
+    border: 0.236em solid #fff;
 }
 
 
@@ -88,6 +100,29 @@ ul li {
     background-color: red;
 }
 
+.logo {
+    width: 40%;
+    display: block;
+    margin: auto;
+}
+
+.title-text {
+    font-size: 6.7em;
+    /*font-size: 6.854em; */
+    font-family: Liquorstore-Regular,Liquorstore, sans-serif;
+}
+
+.overlay p {
+    text-align: center;
+}
+
+.x-btn {
+    display: block;
+    margin: auto;
+    width: 4em;  
+    cursor: pointer;  
+}
+
 
 
 
@@ -113,18 +148,6 @@ ul li {
 
 
 /* INTRO */
-.logo {
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    width: 50vh;
-}
-
-.title-text {
-    font-size: 6.7em;
-    /*font-size: 6.854em; */
-    font-family: Liquorstore-Regular,Liquorstore, sans-serif;
-}
 
 
 

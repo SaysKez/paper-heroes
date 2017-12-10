@@ -106,3 +106,21 @@ var overlayTrigger = new ScrollMagic.Scene({
 .setTween(force)
 .addIndicators()
 .addTo(overlay);
+
+
+var vanishOverlay = new TimelineMax();
+vanishOverlay.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"})
+.to('.overlay', 0.1, {display:"none"});
+
+/*
+$("#close-overlay").click(function(){
+    close.play();
+  },function(){
+    close.reverse();
+  })
+  */
+
+  $("#close-overlay").on("click", function() {
+    tl = TweenMax;
+    tl.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"})
+  });
