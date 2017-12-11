@@ -164,6 +164,11 @@ ul li {
     height: 120vh;        
 }
 
+#spotlight {
+    left: 0;
+    height: 100vh;
+}
+
 
 /* ICONS */
 .icon {
