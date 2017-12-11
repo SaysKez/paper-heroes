@@ -102,16 +102,35 @@ force.to('#force-l', 1, {transformOrigin: "50% 50%", scale:100,}, 0.2)
 var overlayTrigger = new ScrollMagic.Scene({
   triggerElement: "#force",
   reverse: false,
+  /*offset:30*/
 })
+/*
+.on("end", function (e) {
+    if (e.scrollDirection == "FORWARD") {
+      force.play();
+    }
+  })
+  */
 .setTween(force)
 .addIndicators()
 .addTo(overlay);
 
-
+/*
+overlayTrigger.on('enter',function(event){
+    console.log(event.scrollDirection);
+});
+.on("update", function() {
+    var x1 = controller.info("scrollDirection");
+    if ( x1 == "FORWARD") {
+        force.play();
+    }
+    })
+*/
+/*
 var vanishOverlay = new TimelineMax();
 vanishOverlay.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"})
 .to('.overlay', 0.1, {display:"none"});
-
+*/
 /*
 $("#close-overlay").click(function(){
     close.play();
