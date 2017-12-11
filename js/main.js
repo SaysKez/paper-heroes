@@ -120,7 +120,30 @@ $("#close-overlay").click(function(){
   })
   */
 
+  /*
   $("#close-overlay").on("click", function() {
     tl = TweenMax;
     tl.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"})
   });
+  */
+  
+
+  
+  var tl = new TimelineMax({paused:true});
+  tl.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"});
+  
+  $('#close-overlay').on('click', function(event) {
+      force.reverse();
+  });
+
+  
+  /* LASER */
+  /*
+  var laserBlast = new TimelineMax({paused:true});
+  laserBlast.fromTo('#laser-blast', 0.5, {opacity:0, scale:0.5, transformOrigin:"0% 100%", ease:"Bounce.easeOut"}, {opacity:1, scale:1, ease:"Bounce.easeOut"},0)
+  .to('.background', 0.1, {backgroundColor:"#000", ease:"Back.easeIn"},0.1);
+
+  $('#laser-button').on('click', function(event) {
+    laserBlast.play();
+});
+*/
