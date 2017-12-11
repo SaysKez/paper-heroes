@@ -87,3 +87,82 @@ function MouseWheelHandler(e) {
     /*
     var agentHair = new TweenMax.to('#agent-hair', 0.5, {repeat:-1, yoyo:true, rotation:3, scaleY:0.97, scaleX:0.97, transformOrigin: "100% 70%"}, 0);
 */
+
+
+var overlay = new ScrollMagic.Controller({vertical: false});
+
+//animation.
+var force = new TimelineMax();
+force.to('#force-l', 1, {transformOrigin: "50% 50%", scale:100,}, 0.2)
+.to('#force-r', 1, {transformOrigin: "50% 50%", scale:100}, 0.2)
+.fromTo('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"}, {display:"block", borderRadius:"0", scale:1});
+
+
+//scene
+var overlayTrigger = new ScrollMagic.Scene({
+  triggerElement: "#force",
+  reverse: false,
+  /*offset:30*/
+})
+/*
+.on("end", function (e) {
+    if (e.scrollDirection == "FORWARD") {
+      force.play();
+    }
+  })
+  */
+.setTween(force)
+.addIndicators()
+.addTo(overlay);
+
+/*
+overlayTrigger.on('enter',function(event){
+    console.log(event.scrollDirection);
+});
+.on("update", function() {
+    var x1 = controller.info("scrollDirection");
+    if ( x1 == "FORWARD") {
+        force.play();
+    }
+    })
+*/
+/*
+var vanishOverlay = new TimelineMax();
+vanishOverlay.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"})
+.to('.overlay', 0.1, {display:"none"});
+*/
+/*
+$("#close-overlay").click(function(){
+    close.play();
+  },function(){
+    close.reverse();
+  })
+  */
+
+  /*
+  $("#close-overlay").on("click", function() {
+    tl = TweenMax;
+    tl.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"})
+  });
+  */
+  
+
+  
+  var tl = new TimelineMax({paused:true});
+  tl.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"});
+  
+  $('#close-overlay').on('click', function(event) {
+      force.reverse();
+  });
+
+  
+  /* LASER */
+  /*
+  var laserBlast = new TimelineMax({paused:true});
+  laserBlast.fromTo('#laser-blast', 0.5, {opacity:0, scale:0.5, transformOrigin:"0% 100%", ease:"Bounce.easeOut"}, {opacity:1, scale:1, ease:"Bounce.easeOut"},0)
+  .to('.background', 0.1, {backgroundColor:"#000", ease:"Back.easeIn"},0.1);
+
+  $('#laser-button').on('click', function(event) {
+    laserBlast.play();
+});
+*/
