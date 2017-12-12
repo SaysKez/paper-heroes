@@ -112,6 +112,16 @@ ul li {
     font-family: Liquorstore-Regular,Liquorstore, sans-serif;
 }
 
+.intro-heading {
+    font-size: 4.6em;
+    font-family: Liquorstore-Regular,Liquorstore, sans-serif;    
+}
+
+.intro-text {
+    font-family: Avenir-Oblique,Avenir,sans-serif;
+    font-size: 1.3em;
+}
+
 .overlay p {
     text-align: center;
 }
@@ -181,7 +191,7 @@ ul li {
 
 
 #super {
-    left: 100%;
+    left: 65%;
 }
 
 .super-bio {
