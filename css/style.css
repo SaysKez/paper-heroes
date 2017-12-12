@@ -195,7 +195,7 @@ ul li {
 }
 
 .super-bio {
-    left: 130%;
+    left: 100%;
     bottom: 40%;
 }
 
@@ -203,9 +203,19 @@ ul li {
     left: 150%;
 }
 
+.agent-bio {
+    left: 130%;
+    bottom: 10%;
+}
+
 #robot {
     left: 200%;
     height: 220vh;
+}
+
+.robot-bio {
+    left: 190%;
+    bottom: 70%;
 }
 
 #powers {
@@ -213,28 +223,63 @@ ul li {
     bottom: 25%;
 }
 
+.powers-bio {
+    left: 330%;
+    bottom: 70%;
+}
+
 #hammer {
     left: 320%;
+}
+
+.hammer-bio {
+    left: 345%;
+    bottom: 20%;
 }
 
 #scientist {
     left: 370%;
 }
 
+.scientist-bio {
+    left: 390%;
+    bottom: 40%;
+}
+
 #armour {
     left: 450%;
+}
+
+.armour-bio {
+    left: 470%;
+    bottom: 50%;
 }
 
 #punch {
     left: 485%;
 }
 
+.punch-bio {
+    left: 520%;
+    bottom: 10%;
+}
+
 #villain {
     left: 540%;
 }
 
+.villain-bio {
+    left: 530%;
+    bottom: 70%;
+}
+
 #sidekick {
     left: 570%;
+}
+
+.sidekick-bio {
+    left: 600%;
+    bottom: 10%;
 }
 
 #force {
