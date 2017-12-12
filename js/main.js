@@ -193,7 +193,7 @@ var agentEntry = new TweenMax.from('#agent', 0.4, {y:300, scaleY:0.5, ease:"Back
       .addTo(heroEntries);
 
 var robotEntry = new TimelineMax();
-robotEntry.from('#robot', 0.4, {y:-800, ease:"Bounce.easeOut"})
+robotEntry.from('#robot', 0.4, {y:-800, ease:"Bounce.easeOut"});
 /*.to('.background',0.1,{rotation:-2,yoyo:true,repeat:1,ease:"Bounce.easeOut"})
 .to('.background',0.1,{rotation:0,yoyo:true,repeat:1,ease:"Bounce.easeOut"}); */
       //scene
@@ -207,7 +207,7 @@ robotEntry.from('#robot', 0.4, {y:-800, ease:"Bounce.easeOut"})
         .addTo(heroEntries);
 
 var powersEntry = new TimelineMax();
-powersEntry.from('#powers', 0.4, {ease:"Back.easeOut", x:100,y:-600})
+powersEntry.from('#powers', 0.4, {ease:"Back.easeOut", x:100,y:-600});
       //scene
       var powers = new ScrollMagic.Scene({
           triggerElement: "#powers",
@@ -219,7 +219,7 @@ powersEntry.from('#powers', 0.4, {ease:"Back.easeOut", x:100,y:-600})
         .addTo(heroEntries);
 
 var hammerEntry = new TimelineMax();
-hammerEntry.from('#hammer', 0.4, {ease:"Back.easeOut", x:600,y:-300})
+hammerEntry.from('#hammer', 0.4, {ease:"Back.easeOut", x:600,y:-300});
       //scene
       var hammer = new ScrollMagic.Scene({
           triggerElement: "#hammer",
@@ -231,12 +231,48 @@ hammerEntry.from('#hammer', 0.4, {ease:"Back.easeOut", x:600,y:-300})
         .addTo(heroEntries);
 
 var pyroEntry = new TimelineMax();
-pyroEntry.from('#scientist', 0.4, {ease:"Back.easeOut", y:400,scaleY:0.5})
+pyroEntry.from('#scientist', 0.4, {ease:"Back.easeOut", y:400,scaleY:0.5});
       //scene
       var pyro = new ScrollMagic.Scene({
           triggerElement: "#scientist",
           reverse: false,
         })
         .setTween(pyroEntry)
+        .addIndicators()
+        .addTo(heroEntries);
+
+var dualEntry = new TimelineMax();
+dualEntry.from('#armour', 0.4, {ease:"Back.easeOut", y:-800, x:800}, 0)
+.from('#punch', 0.4, {ease:"Back.easeOut", y:-800,x:-800}, 0);
+
+      //scene
+      var pyro = new ScrollMagic.Scene({
+          triggerElement: "#armour",
+          reverse: false,
+          offset:-700,
+        })
+        .setTween(dualEntry)
+        .addIndicators()
+        .addTo(heroEntries);
+
+var villainEntry = new TimelineMax();
+villainEntry.from('#villain', 0.4, {ease:"Bounce.easeOut", y:-800});
+      //scene
+      var villain = new ScrollMagic.Scene({
+          triggerElement: "#villain",
+          reverse: false,
+        })
+        .setTween(villainEntry)
+        .addIndicators()
+        .addTo(heroEntries);
+
+var sidekickEntry = new TimelineMax();
+sidekickEntry.from('#sidekick', 0.4, {ease:"Back.easeOut", y:400,scaleY:0.2});
+      //scene
+      var pyro = new ScrollMagic.Scene({
+          triggerElement: "#sidekick",
+          reverse: false,
+        })
+        .setTween(sidekickEntry)
         .addIndicators()
         .addTo(heroEntries);
