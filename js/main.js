@@ -51,7 +51,7 @@ function MouseWheelHandler(e) {
                                         .addTo(controller);
 */
 
-
+/*
 //scrollmagic
     //init controller
     var controller = new ScrollMagic.Controller({vertical: false});
@@ -67,6 +67,7 @@ function MouseWheelHandler(e) {
     .setTween(blockTween)
     .addIndicators()
     .addTo(controller);
+    */
 
 /*
 //circle
@@ -166,3 +167,76 @@ $("#close-overlay").click(function(){
     laserBlast.play();
 });
 */
+
+
+
+/* SPOTLIGHT */
+var spotlightEnter = new TimelineMax();
+spotlightEnter.from('#spotlight-beam', 0.75, {transformOrigin:"0% 100%", rotation:-45, ease:"Back.easeOut",opacity:0})
+spotlightEnter.from('#super',0.4,{y:-800, ease:"Back.easeOut"},0.7);
+
+
+
+/* HERO ENTRIES */
+var heroEntries = new ScrollMagic.Controller({vertical: false});
+
+/*
+var agent = new TweenMax.from('#agent', 0.4, {y:-800, x:-300, ease:"Back.easeOut"}); */
+var agentEntry = new TweenMax.from('#agent', 0.4, {y:300, scaleY:0.5, ease:"Back.easeOut"});
+    //scene
+    var agent = new ScrollMagic.Scene({
+        triggerElement: "#agent",
+        reverse: false,
+      })
+      .setTween(agentEntry)
+      .addIndicators()
+      .addTo(heroEntries);
+
+var robotEntry = new TimelineMax();
+robotEntry.from('#robot', 0.4, {y:-800, ease:"Bounce.easeOut"})
+/*.to('.background',0.1,{rotation:-2,yoyo:true,repeat:1,ease:"Bounce.easeOut"})
+.to('.background',0.1,{rotation:0,yoyo:true,repeat:1,ease:"Bounce.easeOut"}); */
+      //scene
+      var robot = new ScrollMagic.Scene({
+          triggerElement: "#robot",
+          reverse: false,
+          offset:200,
+        })
+        .setTween(robotEntry)
+        .addIndicators()
+        .addTo(heroEntries);
+
+var powersEntry = new TimelineMax();
+powersEntry.from('#powers', 0.4, {ease:"Back.easeOut", x:100,y:-600})
+      //scene
+      var powers = new ScrollMagic.Scene({
+          triggerElement: "#powers",
+          reverse: false,
+          offset:-100,
+        })
+        .setTween(powersEntry)
+        .addIndicators()
+        .addTo(heroEntries);
+
+var hammerEntry = new TimelineMax();
+hammerEntry.from('#hammer', 0.4, {ease:"Back.easeOut", x:600,y:-300})
+      //scene
+      var hammer = new ScrollMagic.Scene({
+          triggerElement: "#hammer",
+          reverse: false,
+          offset:-600
+        })
+        .setTween(hammerEntry)
+        .addIndicators()
+        .addTo(heroEntries);
+
+var pyroEntry = new TimelineMax();
+pyroEntry.from('#scientist', 0.4, {ease:"Back.easeOut", y:400,scaleY:0.5})
+      //scene
+      var pyro = new ScrollMagic.Scene({
+          triggerElement: "#scientist",
+          reverse: false,
+        })
+        .setTween(pyroEntry)
+        .addIndicators()
+        .addTo(heroEntries);
