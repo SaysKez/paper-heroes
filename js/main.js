@@ -246,7 +246,7 @@ dualEntry.from('#armour', 0.4, {ease:"Back.easeOut", y:-800, x:800}, 0)
 .from('#punch', 0.4, {ease:"Back.easeOut", y:-800,x:-800}, 0);
 
       //scene
-      var pyro = new ScrollMagic.Scene({
+      var dual = new ScrollMagic.Scene({
           triggerElement: "#armour",
           reverse: false,
           offset:-700,
@@ -270,11 +270,23 @@ villainEntry.from('#laser', 0.4, {ease:"Back.easeOut", y:400,scaleY:0})
 var sidekickEntry = new TimelineMax();
 sidekickEntry.from('#sidekick', 0.4, {ease:"Back.easeOut", y:400,scaleY:0.2});
       //scene
-      var pyro = new ScrollMagic.Scene({
+      var sidekick = new ScrollMagic.Scene({
           triggerElement: "#sidekick",
           reverse: false,
         })
         .setTween(sidekickEntry)
+        .addIndicators()
+        .addTo(heroEntries);
+
+var forceEntry = new TimelineMax();
+forceEntry.from('#force', 0.8, {ease:"Back.easeOut", opacity:0});
+      //scene
+      var forceEnter = new ScrollMagic.Scene({
+          triggerElement: "#force",
+          reverse: false,
+          offset: -150,
+        })
+        .setTween(forceEntry)
         .addIndicators()
         .addTo(heroEntries);
 
