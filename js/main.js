@@ -293,12 +293,13 @@ var textBoxTriggers = new ScrollMagic.Controller({vertical: false});
     //animation.
     var reveal = new TimelineMax();
     reveal.from($(this), 1, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeOut"})
-    .to($(this), 0.2, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeIn"});
+    .to($(this), 0.3, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeIn"});
 
     //scene
     var revealText = new ScrollMagic.Scene({
         triggerElement: this,
-        duration: '50%',
+        duration: '60%',
+        offset:-50,
         })
         .setTween(reveal)
         .addIndicators()
