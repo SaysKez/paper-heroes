@@ -82,9 +82,6 @@ function MouseWheelHandler(e) {
     .addTo(controller);
 
     */
-
-    var agent = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.2});
-    agent.to('#agent-arm', 1, {rotation:-3, transformOrigin: "0% 50%", ease:"Back.easeIn"}, 0);
     /*
     var agentHair = new TweenMax.to('#agent-hair', 0.5, {repeat:-1, yoyo:true, rotation:3, scaleY:0.97, scaleX:0.97, transformOrigin: "100% 70%"}, 0);
 */
@@ -173,7 +170,8 @@ $("#close-overlay").click(function(){
 /* SPOTLIGHT */
 var spotlightEnter = new TimelineMax();
 spotlightEnter.from('#spotlight-beam', 0.75, {transformOrigin:"0% 100%", rotation:-45, ease:"Back.easeOut",opacity:0})
-spotlightEnter.from('#super',0.4,{y:-800, ease:"Back.easeOut"},0.7);
+spotlightEnter.from('#super',0.4,{y:-800, ease:"Back.easeOut"},0.5);
+
 
 
 
@@ -182,7 +180,9 @@ var heroEntries = new ScrollMagic.Controller({vertical: false});
 
 /*
 var agent = new TweenMax.from('#agent', 0.4, {y:-800, x:-300, ease:"Back.easeOut"}); */
-var agentEntry = new TweenMax.from('#agent', 0.4, {y:300, scaleY:0.5, ease:"Back.easeOut"});
+var agentEntry = new TimelineMax();
+agentEntry.from('#agent', 0.4, {y:300, scaleY:0.5, ease:"Back.easeOut"})
+
     //scene
     var agent = new ScrollMagic.Scene({
         triggerElement: "#agent",
@@ -256,7 +256,8 @@ dualEntry.from('#armour', 0.4, {ease:"Back.easeOut", y:-800, x:800}, 0)
         .addTo(heroEntries);
 
 var villainEntry = new TimelineMax();
-villainEntry.from('#villain', 0.4, {ease:"Bounce.easeOut", y:-800});
+villainEntry.from('#laser', 0.4, {ease:"Back.easeOut", y:400,scaleY:0})
+.from('#villain', 0.4, {ease:"Bounce.easeOut", y:-800}, 0.2);
       //scene
       var villain = new ScrollMagic.Scene({
           triggerElement: "#villain",
@@ -276,3 +277,39 @@ sidekickEntry.from('#sidekick', 0.4, {ease:"Back.easeOut", y:400,scaleY:0.2});
         .setTween(sidekickEntry)
         .addIndicators()
         .addTo(heroEntries);
+
+
+/* HERO ANIMATIONS */
+var agentFire = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.2});
+agentFire.to('#agent-arm', 1, {rotation:-3, transformOrigin: "0% 50%", ease:"Back.easeIn"}, 0);
+
+
+/* TEXT BOX TRIGGERS */
+
+var textBoxTriggers = new ScrollMagic.Controller({vertical: false});
+
+var superBio = new TimelineMax();
+superBio.from('.super-bio', 0.2, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeOut"})
+.to('.super-bio', 0.2, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeIn"});
+
+    //scene
+    var superText = new ScrollMagic.Scene({
+        triggerElement: "#super",
+        duration:'70%',        
+      })
+      .setTween(superBio)
+      .addIndicators()
+      .addTo(textBoxTriggers);
+
+var agentBio = new TimelineMax();
+agentBio.from('.agent-bio', 1, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeOut"})
+.to('.agent-bio', 0.2, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeIn"});
+
+    //scene
+    var agentText = new ScrollMagic.Scene({
+        triggerElement: "#agent",
+        duration:'50%',
+      })
+      .setTween(agentBio)
+      .addIndicators()
+      .addTo(textBoxTriggers);
