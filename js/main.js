@@ -284,7 +284,7 @@ var agentFire = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.2});
 agentFire.to('#agent-arm', 1, {rotation:-3, transformOrigin: "0% 50%", ease:"Back.easeIn"}, 0);
 
 
-/* TEXT BOX TRIGGERS */
+/* TEXT BOX TRIGGERS 
 
 var textBoxTriggers = new ScrollMagic.Controller({vertical: false});
 
@@ -313,3 +313,64 @@ agentBio.from('.agent-bio', 1, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.e
       .setTween(agentBio)
       .addIndicators()
       .addTo(textBoxTriggers);
+
+var robotBio = new TimelineMax();
+robotBio.from('.robot-bio', 1, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeOut"})
+.to('.robot-bio', 0.2, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeIn"});
+
+    //scene
+    var robotText = new ScrollMagic.Scene({
+        triggerElement: "#robot",
+        duration:'50%',
+      })
+      .setTween(robotBio)
+      .addIndicators()
+      .addTo(textBoxTriggers);
+
+var powersBio = new TimelineMax();
+powersBio.from('.powers-bio', 1, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeOut"})
+.to('.powers-bio', 0.2, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeIn"});
+
+    //scene
+    var powersText = new ScrollMagic.Scene({
+        triggerElement: "#powers",
+        duration:'50%',
+      })
+      .setTween(powersBio)
+      .addIndicators()
+      .addTo(textBoxTriggers);
+
+var hammerBio = new TimelineMax();
+hammerBio.from('.hammer-bio', 1, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeOut"})
+.to('.hammer-bio', 0.2, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeIn"});
+
+    //scene
+    var hammerText = new ScrollMagic.Scene({
+        triggerElement: "#hammer",
+        duration:'50%',
+      })
+      .setTween(hammerBio)
+      .addIndicators()
+      .addTo(textBoxTriggers);
+
+      */
+
+    var textBoxTriggers = new ScrollMagic.Controller({vertical: false});
+    
+        //loops it through all elements with fade-in class
+      $('.text-box').each(function(){
+    
+        //animation.
+      var reveal = new TimelineMax();
+      reveal.from($(this), 1, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeOut"})
+      .to($(this), 0.2, {transformOrigin:"0% 50%", scaleX:0, ease:"Back.easeIn"});
+
+        //scene
+      var revealText = new ScrollMagic.Scene({
+        triggerElement: this,
+        duration: '50%',
+        })
+        .setTween(reveal)
+        .addIndicators()
+        .addTo(textBoxTriggers);
+    });
