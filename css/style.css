@@ -40,6 +40,11 @@ body {
     width: 4em;
     text-align: center;
     border: 0.236em solid #fff;
+    transition: all 0.15s ease-in;
+}
+
+.btn-white:hover {
+    background-color: #fff;
 }
 
 
@@ -96,14 +101,14 @@ ul li {
     z-index: 1000;
     right: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: red;
 }
 
 .logo {
     width: 40%;
     display: block;
-    margin: auto;
+    margin: 3em auto 0.618em auto;
 }
 
 .title-text {
@@ -123,14 +128,25 @@ ul li {
 }
 
 .overlay p {
+    display: block;
+    margin: 0em auto 1em auto;
+    white-space: normal;
     text-align: center;
+    font-size: 110%;
+    width: 65%;
+    max-width: 700px;
 }
 
 .x-btn {
     display: block;
-    margin: auto;
-    width: 4em;  
+    margin: 1.618em auto 0em auto;
+    width: 3.5em;  
     cursor: pointer;  
+    transition: all 0.25s ease-in;
+}
+
+.x-btn:hover {
+    transform: rotate(360), scale(1.5);
 }
 
 
