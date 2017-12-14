@@ -11,7 +11,7 @@ body {
     white-space: nowrap;
     /* background-color: #0432B2;
     remove third building layer if using bg */
-    font-family: Avenir, sans-serif;
+    font-family: "europa", Avenir, sans-serif;
     color: #000;
 }
 
@@ -51,7 +51,7 @@ body {
 /* TYPOGRAPHY */
 a {
     text-decoration: none;
-    font-family: Liquorstore, sans-serif; 
+    font-family: "liquor-store", sans-serif; 
     color: #000; 
     font-size: 1.618em;    
 }
@@ -63,7 +63,7 @@ p {
 }
 
 h1, h2, h3, h4 {
-    font-family: Liquorstore, sans-serif;
+    font-family: "liquor-store", sans-serif;
 }
 
 h3 {
@@ -114,16 +114,16 @@ ul li {
 .title-text {
     font-size: 6.7em;
     /*font-size: 6.854em; */
-    font-family: Liquorstore-Regular,Liquorstore, sans-serif;
+    font-family: "liquor-store", sans-serif;
 }
 
 .intro-heading {
     font-size: 4.6em;
-    font-family: Liquorstore-Regular,Liquorstore, sans-serif;    
+    font-family: "liquor-store", sans-serif;    
 }
 
 .intro-text {
-    font-family: Avenir-Oblique,Avenir,sans-serif;
+    font-family: "europa", Avenir-Oblique,Avenir,sans-serif;
     font-size: 1.3em;
 }
 
@@ -167,7 +167,7 @@ ul li {
 }
 
 .text-box span {
-    font-family: Liquorstore, sans-serif;    
+    font-family: "liquor-store", sans-serif;    
     font-size:  1em;
 }
 
