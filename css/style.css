@@ -11,7 +11,7 @@ body {
     white-space: nowrap;
     /* background-color: #0432B2;
     remove third building layer if using bg */
-    font-family: Avenir, sans-serif;
+    font-family: "europa", Avenir, sans-serif;
     color: #000;
 }
 
@@ -40,13 +40,18 @@ body {
     width: 4em;
     text-align: center;
     border: 0.236em solid #fff;
+    transition: all 0.15s ease-in;
+}
+
+.btn-white:hover {
+    background-color: #fff;
 }
 
 
 /* TYPOGRAPHY */
 a {
     text-decoration: none;
-    font-family: Liquorstore, sans-serif; 
+    font-family: "liquor-store", sans-serif; 
     color: #000; 
     font-size: 1.618em;    
 }
@@ -58,7 +63,7 @@ p {
 }
 
 h1, h2, h3, h4 {
-    font-family: Liquorstore, sans-serif;
+    font-family: "liquor-store", sans-serif;
 }
 
 h3 {
@@ -96,41 +101,52 @@ ul li {
     z-index: 1000;
     right: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: red;
 }
 
 .logo {
     width: 40%;
     display: block;
-    margin: auto;
+    margin: 3em auto 0.618em auto;
 }
 
 .title-text {
     font-size: 6.7em;
     /*font-size: 6.854em; */
-    font-family: Liquorstore-Regular,Liquorstore, sans-serif;
+    font-family: "liquor-store", sans-serif;
 }
 
 .intro-heading {
     font-size: 4.6em;
-    font-family: Liquorstore-Regular,Liquorstore, sans-serif;    
+    font-family: "liquor-store", sans-serif;    
 }
 
 .intro-text {
-    font-family: Avenir-Oblique,Avenir,sans-serif;
+    font-family: "europa", Avenir-Oblique,Avenir,sans-serif;
     font-size: 1.3em;
 }
 
 .overlay p {
+    display: block;
+    margin: 0em auto 1em auto;
+    white-space: normal;
     text-align: center;
+    font-size: 110%;
+    width: 65%;
+    max-width: 700px;
 }
 
 .x-btn {
     display: block;
-    margin: auto;
-    width: 4em;  
+    margin: 1.618em auto 0em auto;
+    width: 3.5em;  
     cursor: pointer;  
+    transition: all 0.25s ease-in;
+}
+
+.x-btn:hover {
+    transform: rotate(360), scale(1.5);
 }
 
 
@@ -151,7 +167,7 @@ ul li {
 }
 
 .text-box span {
-    font-family: Liquorstore, sans-serif;    
+    font-family: "liquor-store", sans-serif;    
     font-size:  1em;
 }
 
