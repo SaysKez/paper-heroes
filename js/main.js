@@ -170,8 +170,23 @@ $("#close-overlay").click(function(){
 /* SPOTLIGHT */
 var spotlightEnter = new TimelineMax();
 spotlightEnter.from('#spotlight-beam', 0.75, {transformOrigin:"0% 100%", rotation:-45, ease:"Back.easeOut",opacity:0})
-spotlightEnter.from('#super',0.4,{y:-800, ease:"Back.easeOut"},0.5);
+.from('.spotlight-content', 0.4, {opacity:0}, 0.5)
+.from('#super',0.4,{y:-800, ease:"Back.easeOut"},0.5)
+.from('.btn-svg', 0.4,{transformOrigin:"50% 50%", ease:"Elastic.easeOut", scale:2, opacity:0});
 
+
+/* BUTTON HOVER */
+var btnHover = new TimelineMax({paused: true});
+btnHover.to('.btn-svg', 0.5, {transformOrigin:"50% 50%", ease: "Back.easeOut", scale:1.05}, 0)
+.to('.btn-fill', 0.5,{transformOrigin:"50% 50%", fill:"#ff0000", ease: "Back.easeOut"}, 0)
+.to('.btn-text', 0.5,{transformOrigin:"50% 50%", fill:"#fff", ease: "Back.easeOut"}, 0)
+
+
+$(".btn-svg").hover(function(){
+    btnHover.play();
+},function(){
+    btnHover.reverse();
+})
 
 
 

@@ -27,12 +27,12 @@ body {
     box-shadow: -10px 6px 0px 0px rgba(0,0,0,0.15);
     */
 }
-
+/*
 .btn-red {
     position: absolute;
     left: 20%;
     border: 0.236em solid red;
-}
+}*/
 
 .btn-white {
     display: block;
@@ -45,6 +45,18 @@ body {
 
 .btn-white:hover {
     background-color: #fff;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.btn-text {
+    font-family: "liquor-store", sans-serif; 
+    color: #000; 
+    font-size: 2.618em;   
+}
+
+.btn-svg:hover {
+    cursor: pointer;
 }
 
 
@@ -125,6 +137,7 @@ ul li {
 .intro-text {
     font-family: "europa", Avenir-Oblique,Avenir,sans-serif;
     font-size: 1.3em;
+    font-style: italic;
 }
 
 .overlay p {
@@ -139,7 +152,7 @@ ul li {
 
 .x-btn {
     display: block;
-    margin: 1.618em auto 0em auto;
+    margin: 1.618em auto 2.618em auto;
     width: 3.5em;  
     cursor: pointer;  
     transition: all 0.25s ease-in;
