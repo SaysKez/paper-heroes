@@ -139,7 +139,7 @@ ul li {
 
 .x-btn {
     display: block;
-    margin: 1.618em auto 0em auto;
+    margin: 1.618em auto 2.618em auto;
     width: 3.5em;  
     cursor: pointer;  
     transition: all 0.25s ease-in;
