@@ -45,6 +45,7 @@ body {
 
 .btn-white:hover {
     background-color: #fff;
+    transform: scale(1.05);
     cursor: pointer;
 }
 
