@@ -171,7 +171,7 @@ $("#close-overlay").click(function(){
 var spotlightEnter = new TimelineMax();
 spotlightEnter.from('#spotlight-beam', 0.75, {transformOrigin:"0% 100%", rotation:-45, ease:"Back.easeOut",opacity:0})
 .from('.spotlight-content', 0.4, {opacity:0}, 0.5)
-.from('#super',0.4,{y:-800, ease:"Back.easeOut"},0.5)
+.from('#super',0.4,{y:-1400, ease:"Back.easeOut"},0.5)
 .from('.btn-svg', 0.4,{transformOrigin:"50% 50%", ease:"Elastic.easeOut", scale:2, opacity:0});
 
 
@@ -188,6 +188,18 @@ $(".btn-svg").hover(function(){
     btnHover.reverse();
 })
 
+var clickHover = new TimelineMax({paused: true});
+clickHover.to('.click', 0.4, {transformOrigin:"50% 50%", ease: "Back.easeOut", scale:1.05}, 0)
+
+$(".click").hover(function(){
+    clickHover.play();
+},function(){
+    clickHover.reverse();
+})
+
+
+
+
 
 
 /* HERO ENTRIES */
@@ -196,7 +208,7 @@ var heroEntries = new ScrollMagic.Controller({vertical: false});
 /*
 var agent = new TweenMax.from('#agent', 0.4, {y:-800, x:-300, ease:"Back.easeOut"}); */
 var agentEntry = new TimelineMax();
-agentEntry.from('#agent', 0.4, {y:300, scaleY:0.5, ease:"Back.easeOut"})
+agentEntry.from('#agent', 0.4, {y:400, transformOrigin:"50% 100%", scaleY:0.01, ease:"Back.easeOut"});
 
     //scene
     var agent = new ScrollMagic.Scene({
@@ -208,7 +220,7 @@ agentEntry.from('#agent', 0.4, {y:300, scaleY:0.5, ease:"Back.easeOut"})
       .addTo(heroEntries);
 
 var robotEntry = new TimelineMax();
-robotEntry.from('#robot', 0.4, {y:-800, ease:"Bounce.easeOut"});
+robotEntry.from('#robot', 0.4, {y:-1400, ease:"Bounce.easeOut"});
 /*.to('.background',0.1,{rotation:-2,yoyo:true,repeat:1,ease:"Bounce.easeOut"})
 .to('.background',0.1,{rotation:0,yoyo:true,repeat:1,ease:"Bounce.easeOut"}); */
       //scene
@@ -222,7 +234,7 @@ robotEntry.from('#robot', 0.4, {y:-800, ease:"Bounce.easeOut"});
         .addTo(heroEntries);
 
 var powersEntry = new TimelineMax();
-powersEntry.from('#powers', 0.4, {ease:"Back.easeOut", x:100,y:-600});
+powersEntry.from('#powers', 0.4, {ease:"Back.easeOut", x:100,y:-950});
       //scene
       var powers = new ScrollMagic.Scene({
           triggerElement: "#powers",
@@ -234,7 +246,7 @@ powersEntry.from('#powers', 0.4, {ease:"Back.easeOut", x:100,y:-600});
         .addTo(heroEntries);
 
 var hammerEntry = new TimelineMax();
-hammerEntry.from('#hammer', 0.4, {ease:"Back.easeOut", x:600,y:-300});
+hammerEntry.from('#hammer', 0.4, {ease:"Back.easeOut", opacity: 0, x:600,y:-300});
       //scene
       var hammer = new ScrollMagic.Scene({
           triggerElement: "#hammer",
@@ -246,7 +258,7 @@ hammerEntry.from('#hammer', 0.4, {ease:"Back.easeOut", x:600,y:-300});
         .addTo(heroEntries);
 
 var pyroEntry = new TimelineMax();
-pyroEntry.from('#scientist', 0.4, {ease:"Back.easeOut", y:400,scaleY:0.5});
+pyroEntry.from('#scientist', 0.4, {ease:"Back.easeOut", transformOrigin:"50% 100%", y:400, scaleY:0.01});
       //scene
       var pyro = new ScrollMagic.Scene({
           triggerElement: "#scientist",
@@ -256,9 +268,20 @@ pyroEntry.from('#scientist', 0.4, {ease:"Back.easeOut", y:400,scaleY:0.5});
         .addIndicators()
         .addTo(heroEntries);
 
+var insanityEntry = new TimelineMax();
+insanityEntry.from('#insanity', 0.4, {y:-1400, ease:"Bounce.easeOut"});
+      //scene
+      var insanity = new ScrollMagic.Scene({
+          triggerElement: "#insanity",
+          reverse: false,
+        })
+        .setTween(insanityEntry)
+        .addIndicators()
+        .addTo(heroEntries);
+
 var dualEntry = new TimelineMax();
-dualEntry.from('#armour', 0.4, {ease:"Back.easeOut", y:-800, x:800}, 0)
-.from('#punch', 0.4, {ease:"Back.easeOut", y:-800,x:-800}, 0);
+dualEntry.from('#armour', 0.4, {ease:"Back.easeOut", y:-1400, x:800}, 0)
+.from('#punch', 0.4, {ease:"Back.easeOut", y:-1400,x:-800}, 0);
 
       //scene
       var dual = new ScrollMagic.Scene({
@@ -271,19 +294,20 @@ dualEntry.from('#armour', 0.4, {ease:"Back.easeOut", y:-800, x:800}, 0)
         .addTo(heroEntries);
 
 var villainEntry = new TimelineMax();
-villainEntry.from('#laser', 0.4, {ease:"Back.easeOut", y:400,scaleY:0})
-.from('#villain', 0.4, {ease:"Bounce.easeOut", y:-800}, 0.2);
+villainEntry.from('#laser', 0.4, {ease:"Back.easeOut", transformOrigin:"50% 100%", y:400,scaleY:0})
+.from('#villain', 0.4, {ease:"Bounce.easeOut", y:-1400}, 0.2);
       //scene
       var villain = new ScrollMagic.Scene({
           triggerElement: "#villain",
           reverse: false,
+          offset:-200,
         })
         .setTween(villainEntry)
         .addIndicators()
         .addTo(heroEntries);
 
 var sidekickEntry = new TimelineMax();
-sidekickEntry.from('#sidekick', 0.4, {ease:"Back.easeOut", y:400,scaleY:0.2});
+sidekickEntry.from('#sidekick', 0.4, {ease:"Back.easeOut", y:400,transformOrigin:"50% 100%",scaleY:0.2});
       //scene
       var sidekick = new ScrollMagic.Scene({
           triggerElement: "#sidekick",
@@ -294,7 +318,7 @@ sidekickEntry.from('#sidekick', 0.4, {ease:"Back.easeOut", y:400,scaleY:0.2});
         .addTo(heroEntries);
 
 var forceEntry = new TimelineMax();
-forceEntry.from('#force', 0.8, {ease:"Back.easeOut", opacity:0});
+forceEntry.from('#force', 1, {ease:"Back.easeOut", opacity:0});
       //scene
       var forceEnter = new ScrollMagic.Scene({
           triggerElement: "#force",
@@ -314,7 +338,7 @@ agentFire.to('#agent-arm', 1, {rotation:-3, transformOrigin: "0% 50%", ease:"Bac
 /* TEXT BOX TRIGGER */
 var textBoxTriggers = new ScrollMagic.Controller({vertical: false});
     
-    //loops it through all elements with fade-in class
+    //loops it through all elements with class
     $('.text-box').each(function(){
     
     //animation.

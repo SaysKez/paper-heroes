@@ -20,8 +20,153 @@ body {
 }
 
 
+/* NAV */
+#logo-nav {
+    margin: 1em;
+    width: 5em;
+    position: fixed;
+    z-index: 100;
+    transition: all 0.2s;
+}
 
-/* ILLUSTRATINOS */
+#logo-nav:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+/* BUTTONS */
+.btn {
+    z-index: 300;
+    left: 20%;
+    padding: 0.382em 0.618em;
+}
+
+.btn-white {
+    display: block;
+    margin: auto;
+    width: 4em;
+    text-align: center;
+    border: 0.236em solid #fff;
+    transition: all 0.15s ease-in;
+}
+
+.btn-white:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.btn-text {
+    font-family: "liquor-store", sans-serif; 
+    color: #000; 
+    font-size: 2.618em;   
+}
+
+.btn-svg:hover {
+    cursor: pointer;
+}
+
+
+/* TYPOGRAPHY */
+a {
+    text-decoration: none;
+    font-family: "liquor-store", sans-serif; 
+    color: #000; 
+    font-size: 1.618em;    
+}
+
+p {
+    font-style: italic; 
+    font-size: 1em;  
+    line-height: 1.618em;      
+}
+
+h1, h2, h3, h4 {
+    font-family: "liquor-store", sans-serif;
+}
+
+h3 {
+    font-style: italic;
+    font-size: 1.618em;
+    margin-bottom: 0.382em;
+}
+
+ul {
+    margin-top: 0.236em;
+}
+
+ul li {
+    list-style: none;
+    line-height: 1.618em;          
+}
+
+
+
+/* ILLUSTRATIONS */
 .effect {
     display: none;
+}
+
+.click:hover {
+    cursor: pointer;
+}
+
+
+
+/* OVERLAY */
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    right: 0;
+    bottom:0;
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+}
+
+.logo {
+    width: 40%;
+    display: block;
+    margin: 3em auto 0.618em auto;
+}
+
+.title-text {
+    font-size: 6.7em;
+    /*font-size: 6.854em; */
+    font-family: "liquor-store", sans-serif;
+}
+
+.intro-heading {
+    font-size: 4.6em;
+    font-family: "liquor-store", sans-serif;    
+}
+
+.intro-text {
+    font-family: "europa", Avenir-Oblique,Avenir,sans-serif;
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+.overlay p {
+    display: block;
+    margin: 0em auto 1em auto;
+    white-space: normal;
+    text-align: center;
+    font-size: 110%;
+    width: 65%;
+    max-width: 700px;
+}
+
+.x-btn {
+    display: block;
+    margin: 1.618em auto 2.618em auto;
+    width: 3.5em;  
+    cursor: pointer;  
+    transition: all 0.25s ease-in;
+}
+
+.x-btn:hover {
+    transform: rotate(360), scale(1.5);
 }
