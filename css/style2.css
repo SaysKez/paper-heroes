@@ -1,0 +1,27 @@
+/* 1. CSS RESET */
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    line-height: 1em;
+}
+
+body {
+    overflow-y: hidden;
+    white-space: nowrap;
+    /* background-color: #0432B2;
+    remove third building layer if using bg */
+    font-family: "europa", Avenir, sans-serif;
+    color: #000;
+}
+
+.city {
+    height: 100vh;
+}
+
+
+
+/* ILLUSTRATINOS */
+.effect {
+    display: none;
+}
