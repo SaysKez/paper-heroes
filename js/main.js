@@ -331,8 +331,60 @@ forceEntry.from('#force', 1, {ease:"Back.easeOut", opacity:0});
 
 
 /* HERO ANIMATIONS */
+var superCape = new TimelineMax({repeat: -1, yoyo:true,repeatDelay:0.2});
+superCape.to('#super-cape', 0.6, {transformOrigin:"100% 40%", scaleX:1.035, ease:"Power0.easeIn"});
+
 var agentFire = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.2});
 agentFire.to('#agent-arm', 1, {rotation:-3, transformOrigin: "0% 50%", ease:"Back.easeIn"}, 0);
+/*
+var bang = new TimelineMax();
+bang.fromTo('#b1', 1, {scaleX:0},{scaleX:1,transformOrigin:"0% 100%", ease:"Back.easeOut"},0)
+.to('#b1',0.5,{scaleX:0,})
+*/
+
+var robotStomp = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.8});
+robotStomp.from('#robot', 0.4, {rotation:5, transformOrigin: "70% 100%", ease:"Bounce.easeOut"})
+/*.to('.city-buildings',0.1,{rotation:2,ease:"Bounce.easeOut"},"-=0.1")*/
+;
+var powersFlame = new TimelineMax({repeat: -1, yoyo:true});
+powersFlame.to('#powers', 0.6,{transformOrigin: "50% 50%",rotation:-1, ease:"Power0.easeIn",repeatDelay:0.2}, 0)
+.to('#powers-hair', 0.6,{transformOrigin: "100% 100%",scaleX:1.1, ease:"Power0.easeIn"}, 0)
+.to('#powers-flame', 0.6,{transformOrigin: "100% 100%",scale:1.2, ease:"Power0.easeIn"}, 0.1)
+.to('#powers-belt', 0.6,{transformOrigin: "100% 0%",rotation:5, ease:"Power0.easeIn",repeatDelay:0.2}, 0);
+
+var hammerThrow = new TimelineMax({repeat: -1, yoyo:true,repeatDelay:0.2});
+hammerThrow.to('#hammer-hand', 0.6, {transformOrigin:"50% 80%", rotation:10, ease:"Power0.easeIn"});
+
+var pyroFlame = new TimelineMax({repeat: -1, yoyo:true,repeatDelay:0.2});
+pyroFlame.to('#flamethrower', 0.6, {transformOrigin:"0% 80%", scaleX:1.1, ease:"Power0.easeIn"});
+
+var insanityHead = new TimelineMax({repeat: -1, yoyo:true});
+insanityHead.to('#insanity-head', 1, {x:-5, y:-5, ease:"Power0.easeIn",repeatDelay:0.6})
+.to('.bubbles', 1, {x:3, y:-3, ease:"Power0.easeIn",repeatDelay:0.6},0)
+.to('#insanity-arm-l', 0.8, {transformOrigin:"100% 60%", rotation:5,ease:"Back.easeIn", repeatDelay:0.2},0)
+.to('#insanity-arm-r', 0.8, {transformOrigin:"0% 60%", rotation:-10,ease:"Back.easeIn", repeatDelay:0.2},0);
+
+var glow = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:0.2});
+glow.from('.glow', 0.4, {scale:1.1, opacity:0.8,transformOrigin:"50% 50%"},0);
+
+var armourGlow = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:0.2});
+armourGlow.to('.armour-glow', 0.6, {fill:'red',ease:"Power0.easeIn"},0)
+.to('.armour-hair', 0.6,{transformOrigin: "0% 50%",scale:1.035, ease:"Power0.easeIn"}, 0);
+
+var punchArm = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:0.2});
+punchArm.to('#punch-arm', 0.4,{x:-10,scale:1.2,ease:"Back.easeOut"})
+.fromTo('#punch-arm', 0.4,{x:-80},{transformOrigin: "0% 50%",scaleX:1.2, ease:"Back.easeOut"});
+
+var villainLaugh = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:0.2});
+villainLaugh.to('#villain-l', 0.8, {transformOrigin:"100% 60%", rotation:11,ease:"Back.easeOut"},0)
+.to('#villain-r', 0.8, {transformOrigin:"0% 60%", rotation:-11,ease:"Back.easeOut"},0);
+
+var staffTwirl = new TimelineMax({repeat: -1, yoyo:true,repeatDelay:0.1});
+staffTwirl.fromTo('#staff', 0.6, {transformOrigin:"65% 60%", rotation:5, ease:"Power0.easeIn"},{transformOrigin:"65% 60%", rotation:-10, ease:"Power0.easeIn"})
+.to('#sidekick-tassle', 0.6,{transformOrigin: "100% 0%",rotation:6, ease:"Power0.easeIn",repeatDelay:0.2}, 0);
+
+var forceHair = new TimelineMax({repeat: -1, yoyo:true});
+forceHair.to('#force-hair', 0.6,{transformOrigin: "50% 0%",scale:1.035, ease:"Power0.easeIn"}, 0)
 
 
 /* TEXT BOX TRIGGER */
