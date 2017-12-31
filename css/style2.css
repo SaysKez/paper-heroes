@@ -20,12 +20,71 @@ body {
 }
 
 
+/* TYPOGRAPHY */
+a {
+    text-decoration: none;
+    font-family: "liquor-store", sans-serif; 
+    color: #000; 
+    font-size: 1.618em;    
+}
+
+p {
+    font-style: italic; 
+    font-size: 1em;  
+    line-height: 1.618em;      
+}
+
+h1, h2, h3, h4 {
+    font-family: "liquor-store", sans-serif;
+}
+
+h3 {
+    font-style: italic;
+    font-size: 1.618em;
+    margin-bottom: 0.382em;
+}
+
+.text-box {
+    font-style: italic; 
+    font-size: 1.618em;  
+    line-height: 1.618em;      
+}
+
+.bio-title {
+    font-family: "liquor-store", sans-serif;
+    font-size: 150%;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.stats {
+    font-style: normal;
+}
+
+.stat-title {
+    font-family: "liquor-store", sans-serif;
+    font-size: 110%;
+}
+
+
 /* NAV */
+.nav {
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.nav h2 {
+    font-size: 1.618em;
+    color: red;
+}
+
 #logo-nav {
     margin: 1em;
     width: 5em;
-    position: fixed;
-    z-index: 100;
     transition: all 0.2s;
 }
 
@@ -33,6 +92,7 @@ body {
     cursor: pointer;
     transform: scale(1.1);
 }
+
 
 
 /* BUTTONS */
@@ -66,41 +126,6 @@ body {
 .btn-svg:hover {
     cursor: pointer;
 }
-
-
-/* TYPOGRAPHY */
-a {
-    text-decoration: none;
-    font-family: "liquor-store", sans-serif; 
-    color: #000; 
-    font-size: 1.618em;    
-}
-
-p {
-    font-style: italic; 
-    font-size: 1em;  
-    line-height: 1.618em;      
-}
-
-h1, h2, h3, h4 {
-    font-family: "liquor-store", sans-serif;
-}
-
-h3 {
-    font-style: italic;
-    font-size: 1.618em;
-    margin-bottom: 0.382em;
-}
-
-ul {
-    margin-top: 0.236em;
-}
-
-ul li {
-    list-style: none;
-    line-height: 1.618em;          
-}
-
 
 
 /* ILLUSTRATIONS */
@@ -145,7 +170,7 @@ ul li {
 
 .intro-text {
     font-family: "europa", Avenir-Oblique,Avenir,sans-serif;
-    font-size: 1.3em;
+    font-size: 1.618em;
     font-style: italic;
 }
 
