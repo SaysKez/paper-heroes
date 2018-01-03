@@ -387,8 +387,10 @@ var staffTwirl = new TimelineMax({repeat: -1, yoyo:true,repeatDelay:0.1});
 staffTwirl.fromTo('#staff', 1, {transformOrigin:"65% 60%", rotation:5, ease:"Power0.easeIn"},{transformOrigin:"65% 60%", rotation:-10, ease:"Power0.easeIn"})
 .to('#sidekick-tassle', 1,{transformOrigin: "100% 0%",rotation:6, ease:"Power0.easeIn"}, 0);
 
-var forceHair = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.2});
-forceHair.to('#force-hair', 1,{transformOrigin: "30% 0%",scaleX:1.035, ease:"Power0.easeIn"}, 0)
+var forceHair = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.1});
+/*forceHair.to('#force-hair', 1,{transformOrigin: "30% 0%",scaleX:1.035, ease:"Power0.easeIn"}, 0)*/
+forceHair.to('#force-l', 0.8, {transformOrigin: "50% 50%", scale:1.2}, 0)
+.to('#force-r', 0.8, {transformOrigin: "50% 50%", scale:1.2}, 0);
 
 
 /* TEXT BOX TRIGGER */

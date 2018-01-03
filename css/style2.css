@@ -16,7 +16,9 @@ body {
 }
 
 .city {
-    height: 100vh;
+    height: 105vh;
+    position: absolute;
+    bottom: 0;
 }
 
 
