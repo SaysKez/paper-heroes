@@ -342,15 +342,19 @@ bang.fromTo('#b1', 1, {scaleX:0},{scaleX:1,transformOrigin:"0% 100%", ease:"Back
 .to('#b1',0.5,{scaleX:0,})
 */
 
-var robotStomp = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.8});
-robotStomp.from('#robot', 0.4, {rotation:5, transformOrigin: "70% 100%", ease:"Bounce.easeOut"})
+var robotStomp = new TimelineMax({repeat: -1, repeatDelay:1});
+robotStomp.to('#robot', 0.4, {rotation:-5, transformOrigin: "30% 100%"})
+robotStomp.to('#robot', 0.4, {rotation:0, transformOrigin: "30% 100%", ease:"Bounce.easeOut"})
+robotStomp.to('#robot', 0.4, {rotation:5, transformOrigin: "70% 100%"},'+=0.4')
+robotStomp.to('#robot', 0.4, {rotation:0, transformOrigin: "70% 100%", ease:"Bounce.easeOut"})
 /*.to('.city-buildings',0.1,{rotation:2,ease:"Bounce.easeOut"},"-=0.1")*/
 ;
+
 var powersFlame = new TimelineMax({repeat: -1, yoyo:true});
-powersFlame.to('#powers', 0.6,{transformOrigin: "50% 50%",rotation:-1, ease:"Power0.easeIn",repeatDelay:0.2}, 0)
-.to('#powers-hair', 0.6,{transformOrigin: "100% 100%",scaleX:1.1, ease:"Power0.easeIn"}, 0)
-.to('#powers-flame', 0.6,{transformOrigin: "100% 100%",scale:1.2, ease:"Power0.easeIn"}, 0.1)
-.to('#powers-belt', 0.6,{transformOrigin: "100% 0%",rotation:5, ease:"Power0.easeIn",repeatDelay:0.2}, 0);
+powersFlame.to('#powers', 1,{transformOrigin: "50% 50%",rotation:-1, ease:"Power0.easeIn",repeatDelay:0.2}, 0)
+.to('#powers-hair', 1,{transformOrigin: "100% 100%",scaleX:1.1, ease:"Power0.easeIn"}, 0)
+.to('#powers-flame', 1,{transformOrigin: "100% 100%",scale:1.2, ease:"Power0.easeIn"}, 0.1)
+.to('#powers-belt', 1,{transformOrigin: "100% 0%",rotation:5, ease:"Power0.easeIn",repeatDelay:0.2}, 0);
 
 var hammerThrow = new TimelineMax({repeat: -1, yoyo:true,repeatDelay:0.2});
 hammerThrow.to('#hammer-hand', 0.6, {transformOrigin:"50% 80%", rotation:10, ease:"Power0.easeIn"});
@@ -380,11 +384,13 @@ villainLaugh.to('#villain-l', 0.8, {transformOrigin:"100% 60%", rotation:11,ease
 .to('#villain-r', 0.8, {transformOrigin:"0% 60%", rotation:-11,ease:"Back.easeOut"},0);
 
 var staffTwirl = new TimelineMax({repeat: -1, yoyo:true,repeatDelay:0.1});
-staffTwirl.fromTo('#staff', 0.6, {transformOrigin:"65% 60%", rotation:5, ease:"Power0.easeIn"},{transformOrigin:"65% 60%", rotation:-10, ease:"Power0.easeIn"})
-.to('#sidekick-tassle', 0.6,{transformOrigin: "100% 0%",rotation:6, ease:"Power0.easeIn",repeatDelay:0.2}, 0);
+staffTwirl.fromTo('#staff', 1, {transformOrigin:"65% 60%", rotation:5, ease:"Power0.easeIn"},{transformOrigin:"65% 60%", rotation:-10, ease:"Power0.easeIn"})
+.to('#sidekick-tassle', 1,{transformOrigin: "100% 0%",rotation:6, ease:"Power0.easeIn"}, 0);
 
-var forceHair = new TimelineMax({repeat: -1, yoyo:true});
-forceHair.to('#force-hair', 0.6,{transformOrigin: "50% 0%",scale:1.035, ease:"Power0.easeIn"}, 0)
+var forceHair = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.1});
+/*forceHair.to('#force-hair', 1,{transformOrigin: "30% 0%",scaleX:1.035, ease:"Power0.easeIn"}, 0)*/
+forceHair.to('#force-l', 0.8, {transformOrigin: "50% 50%", scale:1.2}, 0)
+.to('#force-r', 0.8, {transformOrigin: "50% 50%", scale:1.2}, 0);
 
 
 /* TEXT BOX TRIGGER */
