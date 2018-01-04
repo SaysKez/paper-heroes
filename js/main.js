@@ -228,7 +228,7 @@ $('#powers').on('click', function(event) {
 
   var laserBlast = new TimelineMax({paused:true});
   laserBlast.fromTo('#laser-blast', 0.5, {opacity:0, scale:0.4, transformOrigin:"0% 100%", ease:"Bounce.easeOut"}, {opacity:1, scale:1, ease:"Bounce.easeOut"},0)
-  laserBlast.to('body', 0.1, {ease:"Bounce.easeOut", backgroundColor:'#666', repeat:4, yoyo:true},'-=0.2');
+  laserBlast.to('body', 0.1, {ease:"Bounce.easeOut", backgroundColor:'#666', repeat:4, yoyo:true},'-=0.3');
 
   $('#laser-button').on('click', function(event) {
     laserBlast.play();
@@ -240,10 +240,9 @@ $('#powers').on('click', function(event) {
 /* HERO ENTRIES */
 var heroEntries = new ScrollMagic.Controller({vertical: false});
 
-/*
-var agent = new TweenMax.from('#agent', 0.4, {y:-800, x:-300, ease:"Back.easeOut"}); */
 var agentEntry = new TimelineMax();
-agentEntry.from('#agent', 0.4, {y:400, transformOrigin:"50% 100%", scaleY:0.01, ease:"Back.easeOut"});
+agentEntry.from('#agent', 0.4, {y:400, transformOrigin:"50% 100%", scaleY:0.01, ease:"Back.easeOut"})
+agentEntry.from('#bang', 0.4, {y:700, ease:"Back.easeOut"},0)
 
     //scene
     var agent = new ScrollMagic.Scene({
@@ -254,7 +253,7 @@ agentEntry.from('#agent', 0.4, {y:400, transformOrigin:"50% 100%", scaleY:0.01, 
       .addTo(heroEntries);
 
 var robotEntry = new TimelineMax();
-robotEntry.from('#robot', 0.4, {y:-1400, ease:"Bounce.easeOut"});
+robotEntry.from('#robot', 0.4, {y:-2200, ease:"Bounce.easeOut"});
 /*.to('.background',0.1,{rotation:-2,yoyo:true,repeat:1,ease:"Bounce.easeOut"})
 .to('.background',0.1,{rotation:0,yoyo:true,repeat:1,ease:"Bounce.easeOut"}); */
       //scene
@@ -359,13 +358,13 @@ forceEntry.from('#force', 1, {ease:"Back.easeOut", opacity:0});
 var superCape = new TimelineMax({repeat: -1, yoyo:true,repeatDelay:0.2});
 superCape.to('#super-cape', 0.6, {transformOrigin:"100% 40%", scaleX:1.035, ease:"Power0.easeIn"});
 
-var agentFire = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.2});
-agentFire.to('#agent-arm', 1, {rotation:-3, transformOrigin: "0% 50%", ease:"Back.easeIn"}, 0);
-/*
-var bang = new TimelineMax();
-bang.fromTo('#b1', 1, {scaleX:0},{scaleX:1,transformOrigin:"0% 100%", ease:"Back.easeOut"},0)
-.to('#b1',0.5,{scaleX:0,})
-*/
+var shoot = new TimelineMax({repeat:-1, repeatDelay:1, paused:true});
+shoot.fromTo('#b1', 0.6, {transformOrigin:"0% 100%", scale:0},{scale:1,ease:"Elastic.easeOut"},'-=0.4')
+shoot.fromTo('#b2', 0.6, {transformOrigin:"0% 100%", scale:0},{scale:1,ease:"Elastic.easeOut"},'-=0.1');
+
+var agentFire = new TimelineMax({repeatDelay:0.2});
+agentFire.to('#agent-arm', 1, {rotation:-3, transformOrigin: "0% 50%", ease:"Back.easeIn", repeat: -1, yoyo:true}, 0)
+.add(shoot.play());
 
 var robotStomp = new TimelineMax({repeat: -1, repeatDelay:1});
 robotStomp.to('#stomp', 0.4, {rotation:-5, transformOrigin: "30% 100%"})
