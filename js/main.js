@@ -211,6 +211,8 @@ $('#powers').on('click', function(event) {
 
   var flame = new TimelineMax({paused:true});
   flame.fromTo('.flame', 0.4, {transformOrigin:"50% 100%", scale:0},{transformOrigin:"50% 100%", scale:1, ease:"Back.easeOut"})
+  .fromTo('#kaboom',0.4,{scale:0,transformOrigin:"30% 60%"},{scale:1.2, ease:"Elastic.easeOut"},'-=0.3')
+  .to('#kaboom',0.2,{rotation:5, yoyo:true, repeat:1, ease:"Back.easeIn"},'-=0.4')
   .to('.flame', 0.6, {transformOrigin:"50% 100%", scale:1.035, ease:"Power0.easeIn",repeat:-1, yoyo:true});
 
   $('#scientist').on('click', function(event) {
