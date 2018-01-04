@@ -220,12 +220,12 @@ ul li {
 
 
 #super {
-    left: 65%;
+    left: 45em;
 }
 
 .super-bio {
-    left: 100%;
-    bottom: 40%;
+    left: 66em;
+    bottom: 40vh;
 }
 
 #agent {

@@ -169,7 +169,7 @@ $("#close-overlay").click(function(){
 
 /* SPOTLIGHT */
 var spotlightEnter = new TimelineMax();
-spotlightEnter.from('#spotlight-beam', 0.75, {transformOrigin:"0% 100%", rotation:-45, ease:"Back.easeOut",opacity:0})
+spotlightEnter.from('#spotlight-beam', 0.75, {transformOrigin:"0% 100%", rotation:-70, ease:"Back.easeOut",opacity:0})
 .from('.spotlight-content', 0.4, {opacity:0}, 0.5)
 .from('#super',0.4,{y:-1400, ease:"Back.easeOut"},0.5)
 .from('.btn-svg', 0.4,{transformOrigin:"50% 50%", ease:"Elastic.easeOut", scale:2, opacity:0});
