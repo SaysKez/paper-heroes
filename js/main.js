@@ -1,5 +1,28 @@
+//Flip scrollwheel
+//Thanks Tim! : http://tim-davidson.com/
 
-/*
+(function() {
+    function horizontal(e) {
+      e = window.event || e;
+      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+      document.documentElement.scrollLeft -= (delta*22);
+      document.body.scrollLeft -= (delta*22);
+      e.preventDefault();
+    }
+    if (window.addEventListener) {
+      // IE9, Chrome, Safari, Opera
+      window.addEventListener("mousewheel", horizontal, false);
+      // Firefox
+      window.addEventListener("DOMMouseScroll", horizontal, false);
+    } else {
+      // IE 6/7/8
+      window.attachEvent("onmousewheel", horizontal);
+    }
+    })();
+
+    /*
+
+    //Vertical -> horizontal scroll attempts
 
 $(function() {
     $("html, body").mousewheel(function(event, delta) {
@@ -35,55 +58,6 @@ function MouseWheelHandler(e) {
 
     return false;
 }
-
-
-
-						// init controller
-						var controller = new ScrollMagic.Controller({vertical: false});
-
-						// build tween
-						var tween = TweenMax.to("#target", 0.5, {backgroundColor: "green", width: "+=400"});
-
-						// build scene
-						var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500})
-										.setTween(tween)
-										 // add indicators (requires plugin)
-                                        .addTo(controller);
-*/
-
-/*
-//scrollmagic
-    //init controller
-    var controller = new ScrollMagic.Controller({vertical: false});
-    
-    //animation.
-  var blockTween = new TweenMax.from('#super', 0.3, {opacity: 0});
-
-    //scene
-  var containerScene = new ScrollMagic.Scene({
-      triggerElement: "#super",
-      reverse: false,
-    })
-    .setTween(blockTween)
-    
-    .addTo(controller);
-    */
-
-/*
-//circle
-    var cicleAnimate = new TweenMax.from('#circle', 0.3, {opacity: 0});
-
-    var circle = new ScrollMagic.Scene({
-      triggerElement: "#circle",
-      reverse: false,
-    })
-    .setTween(cicleAnimate)
-    
-    .addTo(controller);
-
-    */
-    /*
-    var agentHair = new TweenMax.to('#agent-hair', 0.5, {repeat:-1, yoyo:true, rotation:3, scaleY:0.97, scaleX:0.97, transformOrigin: "100% 70%"}, 0);
 */
 
 
@@ -123,30 +97,10 @@ overlayTrigger.on('enter',function(event){
     }
     })
 */
-/*
-var vanishOverlay = new TimelineMax();
-vanishOverlay.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"})
-.to('.overlay', 0.1, {display:"none"});
-*/
-/*
-$("#close-overlay").click(function(){
-    close.play();
-  },function(){
-    close.reverse();
-  })
-  */
 
-  /*
-  $("#close-overlay").on("click", function() {
-    tl = TweenMax;
-    tl.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"})
-  });
-  */
-  
-
-  
-  var tl = new TimelineMax({paused:true});
-  tl.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"});
+    
+  var closeOverlay = new TimelineMax({paused:true});
+  closeOverlay.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"});
   
   $('#close-overlay').on('click', function(event) {
       force.reverse();
@@ -360,9 +314,9 @@ forceEntry.from('#force', 1, {ease:"Back.easeOut", opacity:0});
 var superCape = new TimelineMax({repeat: -1, yoyo:true,repeatDelay:0.2});
 superCape.to('#super-cape', 0.6, {transformOrigin:"100% 40%", scaleX:1.035, ease:"Power0.easeIn"});
 
-var shoot = new TimelineMax({repeat:-1, repeatDelay:1, paused:true});
-shoot.fromTo('#b1', 0.6, {transformOrigin:"0% 100%", scale:0},{scale:1,ease:"Elastic.easeOut"},'-=0.4')
-shoot.fromTo('#b2', 0.6, {transformOrigin:"0% 100%", scale:0},{scale:1,ease:"Elastic.easeOut"},'-=0.1');
+var shoot = new TimelineMax({repeat:-1, repeatDelay:0.9, paused:true});
+shoot.fromTo('#b1', 0.6, {transformOrigin:"0% 100%", scale:0},{scale:1,ease:"Elastic.easeOut"})
+shoot.fromTo('#b2', 0.6, {transformOrigin:"0% 100%", scale:0},{scale:1,ease:"Elastic.easeOut"},'-=0.2');
 
 var agentFire = new TimelineMax({repeatDelay:0.2});
 agentFire.to('#agent-arm', 1, {rotation:-3, transformOrigin: "0% 50%", ease:"Back.easeIn", repeat: -1, yoyo:true}, 0)
