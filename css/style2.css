@@ -21,7 +21,6 @@ body {
     bottom: 0;
 }
 
-
 /* TYPOGRAPHY */
 .overlay a {
     text-decoration: none;
@@ -121,24 +120,6 @@ p {
     cursor: pointer;
 }
 
-
-/* ILLUSTRATIONS */
-.effect {
-    display: none;
-}
-
-.click:hover {
-    cursor: pointer;
-}
-
-#remote text {
-    font-size: 1.7em;
-    fill: #fff;
-    font-family: "liquor-store", sans-serif; 
-}
-
-
-
 /* OVERLAY */
 .overlay {
     display: none;
@@ -154,7 +135,7 @@ p {
 .logo {
     width: 40%;
     display: block;
-    margin: 1em auto 0.618em auto;
+    margin: 0em auto 0.618em auto;
 }
 
 .title-text {
@@ -196,6 +177,18 @@ p {
 }
 
 
+/* ILLUSTRATIONS */
+.click:hover {
+    cursor: pointer;
+}
+
+#remote text {
+    font-size: 1.7em;
+    fill: #fff;
+    font-family: "liquor-store", sans-serif; 
+}
+
+
 @media (max-width: 60em) { 
     .city {
         display: none;
@@ -211,6 +204,7 @@ p {
 
     .overlay {
         display: block;
+        transform: scale(1);
     }
 
     .logo {
@@ -218,7 +212,7 @@ p {
     }
 
     .overlay p {
-        width: 90%;
+        width: 80%;
         font-size: 1.2em;
     }
 }

@@ -1,5 +1,28 @@
+//Flip scrollwheel
+//Thanks Tim! : http://tim-davidson.com/
 
-/*
+(function() {
+    function horizontal(e) {
+      e = window.event || e;
+      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+      document.documentElement.scrollLeft -= (delta*22);
+      document.body.scrollLeft -= (delta*22);
+      e.preventDefault();
+    }
+    if (window.addEventListener) {
+      // IE9, Chrome, Safari, Opera
+      window.addEventListener("mousewheel", horizontal, false);
+      // Firefox
+      window.addEventListener("DOMMouseScroll", horizontal, false);
+    } else {
+      // IE 6/7/8
+      window.attachEvent("onmousewheel", horizontal);
+    }
+    })();
+
+    /*
+
+    //Vertical -> horizontal scroll attempts
 
 $(function() {
     $("html, body").mousewheel(function(event, delta) {
@@ -35,55 +58,6 @@ function MouseWheelHandler(e) {
 
     return false;
 }
-
-
-
-						// init controller
-						var controller = new ScrollMagic.Controller({vertical: false});
-
-						// build tween
-						var tween = TweenMax.to("#target", 0.5, {backgroundColor: "green", width: "+=400"});
-
-						// build scene
-						var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500})
-										.setTween(tween)
-										 // add indicators (requires plugin)
-                                        .addTo(controller);
-*/
-
-/*
-//scrollmagic
-    //init controller
-    var controller = new ScrollMagic.Controller({vertical: false});
-    
-    //animation.
-  var blockTween = new TweenMax.from('#super', 0.3, {opacity: 0});
-
-    //scene
-  var containerScene = new ScrollMagic.Scene({
-      triggerElement: "#super",
-      reverse: false,
-    })
-    .setTween(blockTween)
-    
-    .addTo(controller);
-    */
-
-/*
-//circle
-    var cicleAnimate = new TweenMax.from('#circle', 0.3, {opacity: 0});
-
-    var circle = new ScrollMagic.Scene({
-      triggerElement: "#circle",
-      reverse: false,
-    })
-    .setTween(cicleAnimate)
-    
-    .addTo(controller);
-
-    */
-    /*
-    var agentHair = new TweenMax.to('#agent-hair', 0.5, {repeat:-1, yoyo:true, rotation:3, scaleY:0.97, scaleX:0.97, transformOrigin: "100% 70%"}, 0);
 */
 
 
@@ -123,46 +97,17 @@ overlayTrigger.on('enter',function(event){
     }
     })
 */
-/*
-var vanishOverlay = new TimelineMax();
-vanishOverlay.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"})
-.to('.overlay', 0.1, {display:"none"});
-*/
-/*
-$("#close-overlay").click(function(){
-    close.play();
-  },function(){
-    close.reverse();
-  })
-  */
 
-  /*
-  $("#close-overlay").on("click", function() {
-    tl = TweenMax;
-    tl.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"})
-  });
-  */
-  
-
-  
-  var tl = new TimelineMax({paused:true});
-  tl.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"});
+    
+  var closeOverlay = new TimelineMax({paused:true});
+  closeOverlay.to('.overlay', 1, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"});
   
   $('#close-overlay').on('click', function(event) {
       force.reverse();
   });
 
-  
-  /* LASER */
-  /*
-  var laserBlast = new TimelineMax({paused:true});
-  laserBlast.fromTo('#laser-blast', 0.5, {opacity:0, scale:0.5, transformOrigin:"0% 100%", ease:"Bounce.easeOut"}, {opacity:1, scale:1, ease:"Bounce.easeOut"},0)
-  .to('.background', 0.1, {backgroundColor:"#000", ease:"Back.easeIn"},0.1);
 
-  $('#laser-button').on('click', function(event) {
-    laserBlast.play();
-});
-*/
+
 
 
 
@@ -209,15 +154,51 @@ $(".nav").hover(function(){
 })
 
 
+  /* CLICK */
+var shrink = new TimelineMax({paused:true});
+shrink.fromTo('#zing', 0.2, {transformOrigin:"100% 0%", scale:0},{scale:1,ease:"Elastic.easeOut"})
+.to('#robot', 0.6, {transformOrigin:"70% 100%", scale:0.3, ease:"Bounce.easeOut"});
+
+$('#powers').on('click', function(event) {
+  shrink.play();
+  });
+
+  var flame = new TimelineMax({paused:true});
+  flame.fromTo('.flame', 0.4, {transformOrigin:"50% 100%", scale:0},{transformOrigin:"50% 100%", scale:1, ease:"Back.easeOut"})
+  .fromTo('#kaboom',0.4,{scale:0,transformOrigin:"30% 60%"},{scale:1.2, ease:"Elastic.easeOut"},'-=0.3')
+  .to('#kaboom',0.2,{rotation:5, yoyo:true, repeat:1, ease:"Back.easeIn"},'-=0.4')
+  .to('.flame', 0.6, {transformOrigin:"50% 100%", scale:1.035, ease:"Power0.easeIn",repeat:-1, yoyo:true});
+
+  $('#scientist').on('click', function(event) {
+    flame.play();
+    });
+
+  var boom = new TimelineMax({paused:true});
+  boom.to('.city-buildings', 0.6, {y:300,ease:"Bounce.easeOut"})
+  .fromTo('#kaboom',0.4,{scale:0,transformOrigin:"30% 60%"},{scale:1.2, ease:"Elastic.easeOut"},'-=0.3')
+  .to('#kaboom',0.2,{rotation:5, yoyo:true, repeat:1, ease:"Back.easeIn"},'-=0.4');
+
+  $('#remote').on('click', function(event) {
+    boom.play();
+    });
+
+  var laserBlast = new TimelineMax({paused:true});
+  laserBlast.fromTo('#laser-blast', 0.5, {opacity:0, scale:0.4, transformOrigin:"0% 100%", ease:"Bounce.easeOut"}, {opacity:1, scale:1, ease:"Bounce.easeOut"},0)
+  laserBlast.to('body', 0.1, {ease:"Bounce.easeOut", backgroundColor:'#666', repeat:4, yoyo:true},'-=0.3');
+
+  $('#laser-button').on('click', function(event) {
+    laserBlast.play();
+    });
+
+
 
 
 /* HERO ENTRIES */
 var heroEntries = new ScrollMagic.Controller({vertical: false});
 
-/*
-var agent = new TweenMax.from('#agent', 0.4, {y:-800, x:-300, ease:"Back.easeOut"}); */
 var agentEntry = new TimelineMax();
-agentEntry.from('#agent', 0.4, {y:400, transformOrigin:"50% 100%", scaleY:0.01, ease:"Back.easeOut"});
+agentEntry.from('#agent', 0.4, {y:400, transformOrigin:"50% 100%", scaleY:0.01, ease:"Back.easeOut"})
+agentEntry.from('#bang', 0.4, {y:700, ease:"Back.easeOut"},0)
 
     //scene
     var agent = new ScrollMagic.Scene({
@@ -228,7 +209,7 @@ agentEntry.from('#agent', 0.4, {y:400, transformOrigin:"50% 100%", scaleY:0.01, 
       .addTo(heroEntries);
 
 var robotEntry = new TimelineMax();
-robotEntry.from('#robot', 0.4, {y:-1400, ease:"Bounce.easeOut"});
+robotEntry.from('#robot', 0.4, {y:-2200, ease:"Bounce.easeOut"});
 /*.to('.background',0.1,{rotation:-2,yoyo:true,repeat:1,ease:"Bounce.easeOut"})
 .to('.background',0.1,{rotation:0,yoyo:true,repeat:1,ease:"Bounce.easeOut"}); */
       //scene
@@ -333,19 +314,19 @@ forceEntry.from('#force', 1, {ease:"Back.easeOut", opacity:0});
 var superCape = new TimelineMax({repeat: -1, yoyo:true,repeatDelay:0.2});
 superCape.to('#super-cape', 0.6, {transformOrigin:"100% 40%", scaleX:1.035, ease:"Power0.easeIn"});
 
-var agentFire = new TimelineMax({repeat: -1, yoyo:true, repeatDelay:0.2});
-agentFire.to('#agent-arm', 1, {rotation:-3, transformOrigin: "0% 50%", ease:"Back.easeIn"}, 0);
-/*
-var bang = new TimelineMax();
-bang.fromTo('#b1', 1, {scaleX:0},{scaleX:1,transformOrigin:"0% 100%", ease:"Back.easeOut"},0)
-.to('#b1',0.5,{scaleX:0,})
-*/
+var shoot = new TimelineMax({repeat:-1, repeatDelay:0.9, paused:true});
+shoot.fromTo('#b1', 0.6, {transformOrigin:"0% 100%", scale:0},{scale:1,ease:"Elastic.easeOut"})
+shoot.fromTo('#b2', 0.6, {transformOrigin:"0% 100%", scale:0},{scale:1,ease:"Elastic.easeOut"},'-=0.2');
+
+var agentFire = new TimelineMax({repeatDelay:0.2});
+agentFire.to('#agent-arm', 1, {rotation:-3, transformOrigin: "0% 50%", ease:"Back.easeIn", repeat: -1, yoyo:true}, 0)
+.add(shoot.play());
 
 var robotStomp = new TimelineMax({repeat: -1, repeatDelay:1});
-robotStomp.to('#robot', 0.4, {rotation:-5, transformOrigin: "30% 100%"})
-robotStomp.to('#robot', 0.4, {rotation:0, transformOrigin: "30% 100%", ease:"Bounce.easeOut"})
-robotStomp.to('#robot', 0.4, {rotation:5, transformOrigin: "70% 100%"},'+=0.4')
-robotStomp.to('#robot', 0.4, {rotation:0, transformOrigin: "70% 100%", ease:"Bounce.easeOut"})
+robotStomp.to('#stomp', 0.4, {rotation:-5, transformOrigin: "30% 100%"})
+robotStomp.to('#stomp', 0.4, {rotation:0, transformOrigin: "30% 100%", ease:"Bounce.easeOut"})
+robotStomp.to('#stomp', 0.4, {rotation:5, transformOrigin: "70% 100%"},'+=0.4')
+robotStomp.to('#stomp', 0.4, {rotation:0, transformOrigin: "70% 100%", ease:"Bounce.easeOut"})
 /*.to('.city-buildings',0.1,{rotation:2,ease:"Bounce.easeOut"},"-=0.1")*/
 ;
 
