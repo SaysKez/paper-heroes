@@ -60,7 +60,7 @@ function MouseWheelHandler(e) {
 }
 */
 
-
+if(window.innerWidth > 959){
 var overlay = new ScrollMagic.Controller({vertical: false});
 
 //animation.
@@ -105,6 +105,7 @@ overlayTrigger.on('enter',function(event){
   $('#close-overlay').on('click', function(event) {
       force.reverse();
   });
+}
 
 
 
