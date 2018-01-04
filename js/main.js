@@ -185,7 +185,7 @@ $('#powers').on('click', function(event) {
 
   var laserBlast = new TimelineMax({paused:true});
   laserBlast.fromTo('#laser-blast', 0.5, {opacity:0, scale:0.4, transformOrigin:"0% 100%", ease:"Bounce.easeOut"}, {opacity:1, scale:1, ease:"Bounce.easeOut"},0)
-  laserBlast.to('body', 0.1, {ease:"Bounce.easeOut", backgroundColor:'#666', repeat:4, yoyo:true},'-=0.3');
+  laserBlast.to('.background', 0.1, {ease:"Bounce.easeOut", fill:'#000', opacity:0.6,repeat:4, yoyo:true},'-=0.3');
 
   $('#laser-button').on('click', function(event) {
     laserBlast.play();
