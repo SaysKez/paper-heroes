@@ -60,14 +60,14 @@ function MouseWheelHandler(e) {
 }
 */
 
-
+if(window.innerWidth > 959){
 var overlay = new ScrollMagic.Controller({vertical: false});
 
 //animation.
 var force = new TimelineMax();
 force.to('#force-l', 0.3, {transformOrigin: "50% 50%", scale:4}, 0.1)
 .to('#force-r', 0.3, {transformOrigin: "50% 50%", scale:4}, 0.1)
-.fromTo('.overlay', 0.5, {scale:0, transformOrigin:"60% 60%", ease:"Back.easeIn", borderRadius:"100%"}, {transformOrigin:"60% 60%", display:"block", borderRadius:"0", scale:1},0.15);
+.fromTo('.overlay', 0.5, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"}, {transformOrigin:"50% 50%", display:"block", borderRadius:"0", scale:1},0.15);
 
 
 //scene
@@ -105,6 +105,7 @@ overlayTrigger.on('enter',function(event){
   $('#close-overlay').on('click', function(event) {
       force.reverse();
   });
+}
 
 
 
@@ -184,7 +185,7 @@ $('#powers').on('click', function(event) {
 
   var laserBlast = new TimelineMax({paused:true});
   laserBlast.fromTo('#laser-blast', 0.5, {opacity:0, scale:0.4, transformOrigin:"0% 100%", ease:"Bounce.easeOut"}, {opacity:1, scale:1, ease:"Bounce.easeOut"},0)
-  laserBlast.to('body', 0.1, {ease:"Bounce.easeOut", backgroundColor:'#666', repeat:4, yoyo:true},'-=0.3');
+  laserBlast.to('.background', 0.1, {ease:"Bounce.easeOut", fill:'#000', opacity:0.6,repeat:4, yoyo:true},'-=0.3');
 
   $('#laser-button').on('click', function(event) {
     laserBlast.play();
