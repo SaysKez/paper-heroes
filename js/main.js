@@ -152,17 +152,8 @@ $("#close-overlay").click(function(){
       force.reverse();
   });
 
-  
-  /* LASER */
-  /*
-  var laserBlast = new TimelineMax({paused:true});
-  laserBlast.fromTo('#laser-blast', 0.5, {opacity:0, scale:0.5, transformOrigin:"0% 100%", ease:"Bounce.easeOut"}, {opacity:1, scale:1, ease:"Bounce.easeOut"},0)
-  .to('.background', 0.1, {backgroundColor:"#000", ease:"Back.easeIn"},0.1);
 
-  $('#laser-button').on('click', function(event) {
-    laserBlast.play();
-});
-*/
+
 
 
 
@@ -207,6 +198,42 @@ $(".nav").hover(function(){
 },function(){
     navHover.reverse();
 })
+
+
+
+  /* CLICK */
+var shrink = new TimelineMax({paused:true});
+shrink.fromTo('#zing', 0.2, {transformOrigin:"100% 0%", scale:0},{scale:1,ease:"Elastic.easeOut"})
+.to('#robot', 0.6, {transformOrigin:"50% 100%", scale:0.2, ease:"Bounce.easeOut"})
+
+$('#powers').on('click', function(event) {
+  shrink.play();
+  });
+
+  var flame = new TimelineMax({paused:true});
+  flame.fromTo('.flame', 0.4, {transformOrigin:"50% 100%", scale:0},{transformOrigin:"50% 100%", scale:1, ease:"Back.easeOut"})
+  .to('.flame', 0.6, {transformOrigin:"50% 100%", scale:1.035, ease:"Power0.easeIn",repeat:-1, yoyo:true});
+
+  $('#scientist').on('click', function(event) {
+    flame.play();
+    });
+
+  var boom = new TimelineMax({paused:true});
+  boom.to('.city-buildings', 0.6, {y:300,ease:"Bounce.easeOut"})
+  .fromTo('#kaboom',0.4,{scale:0,transformOrigin:"30% 60%"},{scale:1.2, ease:"Elastic.easeOut"},'-=0.3')
+  .to('#kaboom',0.2,{rotation:5, yoyo:true, repeat:1, ease:"Back.easeIn"},'-=0.4');
+
+  $('#remote').on('click', function(event) {
+    boom.play();
+    });
+
+  var laserBlast = new TimelineMax({paused:true});
+  laserBlast.fromTo('#laser-blast', 0.5, {opacity:0, scale:0.4, transformOrigin:"0% 100%", ease:"Bounce.easeOut"}, {opacity:1, scale:1, ease:"Bounce.easeOut"},0)
+  laserBlast.to('body', 0.1, {ease:"Bounce.easeOut", backgroundColor:'#666', repeat:4, yoyo:true},'-=0.2');
+
+  $('#laser-button').on('click', function(event) {
+    laserBlast.play();
+    });
 
 
 
