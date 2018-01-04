@@ -67,7 +67,7 @@ var overlay = new ScrollMagic.Controller({vertical: false});
 var force = new TimelineMax();
 force.to('#force-l', 0.3, {transformOrigin: "50% 50%", scale:4}, 0.1)
 .to('#force-r', 0.3, {transformOrigin: "50% 50%", scale:4}, 0.1)
-.fromTo('.overlay', 0.5, {scale:0, transformOrigin:"60% 60%", ease:"Back.easeIn", borderRadius:"100%"}, {transformOrigin:"60% 60%", display:"block", borderRadius:"0", scale:1},0.15);
+.fromTo('.overlay', 0.5, {scale:0, transformOrigin:"50% 50%", ease:"Back.easeIn", borderRadius:"100%"}, {transformOrigin:"50% 50%", display:"block", borderRadius:"0", scale:1},0.15);
 
 
 //scene
