@@ -200,11 +200,10 @@ $(".nav").hover(function(){
 })
 
 
-
   /* CLICK */
 var shrink = new TimelineMax({paused:true});
 shrink.fromTo('#zing', 0.2, {transformOrigin:"100% 0%", scale:0},{scale:1,ease:"Elastic.easeOut"})
-.to('#robot', 0.6, {transformOrigin:"50% 100%", scale:0.2, ease:"Bounce.easeOut"})
+.to('#robot', 0.6, {transformOrigin:"70% 100%", scale:0.3, ease:"Bounce.easeOut"});
 
 $('#powers').on('click', function(event) {
   shrink.play();
@@ -369,10 +368,10 @@ bang.fromTo('#b1', 1, {scaleX:0},{scaleX:1,transformOrigin:"0% 100%", ease:"Back
 */
 
 var robotStomp = new TimelineMax({repeat: -1, repeatDelay:1});
-robotStomp.to('#robot', 0.4, {rotation:-5, transformOrigin: "30% 100%"})
-robotStomp.to('#robot', 0.4, {rotation:0, transformOrigin: "30% 100%", ease:"Bounce.easeOut"})
-robotStomp.to('#robot', 0.4, {rotation:5, transformOrigin: "70% 100%"},'+=0.4')
-robotStomp.to('#robot', 0.4, {rotation:0, transformOrigin: "70% 100%", ease:"Bounce.easeOut"})
+robotStomp.to('#stomp', 0.4, {rotation:-5, transformOrigin: "30% 100%"})
+robotStomp.to('#stomp', 0.4, {rotation:0, transformOrigin: "30% 100%", ease:"Bounce.easeOut"})
+robotStomp.to('#stomp', 0.4, {rotation:5, transformOrigin: "70% 100%"},'+=0.4')
+robotStomp.to('#stomp', 0.4, {rotation:0, transformOrigin: "70% 100%", ease:"Bounce.easeOut"})
 /*.to('.city-buildings',0.1,{rotation:2,ease:"Bounce.easeOut"},"-=0.1")*/
 ;
 
