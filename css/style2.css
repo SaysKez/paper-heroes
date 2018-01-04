@@ -32,18 +32,8 @@ a {
 
 p {
     font-style: italic; 
-    font-size: 1em;  
+    font-size: 1.618em;  
     line-height: 1.618em;      
-}
-
-h1, h2, h3, h4 {
-    font-family: "liquor-store", sans-serif;
-}
-
-h3 {
-    font-style: italic;
-    font-size: 1.618em;
-    margin-bottom: 0.382em;
 }
 
 .text-box {
@@ -81,19 +71,21 @@ h3 {
 }
 
 .nav h2 {
+    font-family: "liquor-store", sans-serif;
     font-size: 1.618em;
     color: red;
+    position: absolute;
+    left: 4em;
+    top: 1.5em;
 }
 
 #logo-nav {
     margin: 1em;
     width: 5em;
-    transition: all 0.2s;
 }
 
-#logo-nav:hover {
+#logo-nav:hover, #nav-dl:hover {
     cursor: pointer;
-    transform: scale(1.1);
 }
 
 
@@ -140,6 +132,12 @@ h3 {
     cursor: pointer;
 }
 
+#remote text {
+    font-size: 1.7em;
+    fill: #fff;
+    font-family: "liquor-store", sans-serif; 
+}
+
 
 
 /* OVERLAY */
@@ -157,7 +155,7 @@ h3 {
 .logo {
     width: 40%;
     display: block;
-    margin: 3em auto 0.618em auto;
+    margin: 1em auto 0.618em auto;
 }
 
 .title-text {
@@ -167,7 +165,7 @@ h3 {
 }
 
 .intro-heading {
-    font-size: 5.6em;
+    font-size: 5.8em;
     font-family: "liquor-store", sans-serif;    
 }
 
@@ -182,7 +180,6 @@ h3 {
     margin: 0em auto 1em auto;
     white-space: normal;
     text-align: center;
-    font-size: 110%;
     width: 65%;
     max-width: 700px;
 }
@@ -197,4 +194,36 @@ h3 {
 
 .x-btn:hover {
     transform: rotate(360), scale(1.5);
+}
+
+
+@media (max-width: 60em) { 
+    .city {
+        display: none;
+    } 
+
+    .nav {
+        display: none;
+    }
+
+    .x-btn {
+        display: none;
+    }
+
+    .overlay {
+        display: block;
+    }
+
+    .logo {
+        width: 80%;
+    }
+
+    .overlay p {
+        width: 90%;
+        font-size: 1.2em;
+    }
+
+    .btn {
+        margin-top: 1.618em;
+    }
 }

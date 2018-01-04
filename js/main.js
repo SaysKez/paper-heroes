@@ -47,7 +47,7 @@ function MouseWheelHandler(e) {
 						// build scene
 						var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500})
 										.setTween(tween)
-										.addIndicators() // add indicators (requires plugin)
+										 // add indicators (requires plugin)
                                         .addTo(controller);
 */
 
@@ -65,7 +65,7 @@ function MouseWheelHandler(e) {
       reverse: false,
     })
     .setTween(blockTween)
-    .addIndicators()
+    
     .addTo(controller);
     */
 
@@ -78,7 +78,7 @@ function MouseWheelHandler(e) {
       reverse: false,
     })
     .setTween(cicleAnimate)
-    .addIndicators()
+    
     .addTo(controller);
 
     */
@@ -100,7 +100,7 @@ force.to('#force-l', 0.3, {transformOrigin: "50% 50%", scale:4}, 0.1)
 var overlayTrigger = new ScrollMagic.Scene({
   triggerElement: "#force",
   reverse: false,
-  /*offset:30*/
+  offset:30,
 })
 /*
 .on("end", function (e) {
@@ -110,7 +110,6 @@ var overlayTrigger = new ScrollMagic.Scene({
   })
   */
 .setTween(force)
-.addIndicators()
 .addTo(overlay);
 
 /*
@@ -188,6 +187,7 @@ $(".btn-svg").hover(function(){
     btnHover.reverse();
 })
 
+
 var clickHover = new TimelineMax({paused: true});
 clickHover.to('.click', 0.4, {transformOrigin:"50% 50%", ease: "Back.easeOut", scale:1.05}, 0)
 
@@ -198,6 +198,15 @@ $(".click").hover(function(){
 })
 
 
+var navHover = new TimelineMax({paused: true});
+navHover.from('#nav-dl', 0.4, {ease:"Back.easeOut",opacity:0,scale:0.8,left:'1em'}, 0)
+.to('#logo-nav', 0.4, {scale:1.035, ease: "Back.easeOut"},0);
+
+$(".nav").hover(function(){
+    navHover.play();
+},function(){
+    navHover.reverse();
+})
 
 
 
@@ -216,7 +225,6 @@ agentEntry.from('#agent', 0.4, {y:400, transformOrigin:"50% 100%", scaleY:0.01, 
         reverse: false,
       })
       .setTween(agentEntry)
-      .addIndicators()
       .addTo(heroEntries);
 
 var robotEntry = new TimelineMax();
@@ -230,7 +238,6 @@ robotEntry.from('#robot', 0.4, {y:-1400, ease:"Bounce.easeOut"});
           offset:200,
         })
         .setTween(robotEntry)
-        .addIndicators()
         .addTo(heroEntries);
 
 var powersEntry = new TimelineMax();
@@ -242,7 +249,6 @@ powersEntry.from('#powers', 0.4, {ease:"Back.easeOut", x:100,y:-950});
           offset:-100,
         })
         .setTween(powersEntry)
-        .addIndicators()
         .addTo(heroEntries);
 
 var hammerEntry = new TimelineMax();
@@ -254,7 +260,6 @@ hammerEntry.from('#hammer', 0.4, {ease:"Back.easeOut", opacity: 0, x:600,y:-300}
           offset:-600
         })
         .setTween(hammerEntry)
-        .addIndicators()
         .addTo(heroEntries);
 
 var pyroEntry = new TimelineMax();
@@ -265,7 +270,6 @@ pyroEntry.from('#scientist', 0.4, {ease:"Back.easeOut", transformOrigin:"50% 100
           reverse: false,
         })
         .setTween(pyroEntry)
-        .addIndicators()
         .addTo(heroEntries);
 
 var insanityEntry = new TimelineMax();
@@ -276,7 +280,6 @@ insanityEntry.from('#insanity', 0.4, {y:-1400, ease:"Bounce.easeOut"});
           reverse: false,
         })
         .setTween(insanityEntry)
-        .addIndicators()
         .addTo(heroEntries);
 
 var dualEntry = new TimelineMax();
@@ -290,7 +293,6 @@ dualEntry.from('#armour', 0.4, {ease:"Back.easeOut", y:-1400, x:800}, 0)
           offset:-700,
         })
         .setTween(dualEntry)
-        .addIndicators()
         .addTo(heroEntries);
 
 var villainEntry = new TimelineMax();
@@ -303,7 +305,6 @@ villainEntry.from('#laser', 0.4, {ease:"Back.easeOut", transformOrigin:"50% 100%
           offset:-200,
         })
         .setTween(villainEntry)
-        .addIndicators()
         .addTo(heroEntries);
 
 var sidekickEntry = new TimelineMax();
@@ -314,7 +315,6 @@ sidekickEntry.from('#sidekick', 0.4, {ease:"Back.easeOut", y:400,transformOrigin
           reverse: false,
         })
         .setTween(sidekickEntry)
-        .addIndicators()
         .addTo(heroEntries);
 
 var forceEntry = new TimelineMax();
@@ -326,7 +326,6 @@ forceEntry.from('#force', 1, {ease:"Back.easeOut", opacity:0});
           offset: -150,
         })
         .setTween(forceEntry)
-        .addIndicators()
         .addTo(heroEntries);
 
 
@@ -411,6 +410,5 @@ var textBoxTriggers = new ScrollMagic.Controller({vertical: false});
         offset:-50,
         })
         .setTween(reveal)
-        .addIndicators()
         .addTo(textBoxTriggers);
     });

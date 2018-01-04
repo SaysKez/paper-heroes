@@ -18,6 +18,7 @@
 <body>
 
 <div class="nav">
+  <a href="" download>
     <svg id="logo-nav" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 120">
         <path fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width=".78" d="M114.08 75.72L68 98.11 21.92 75.72 18.46 8.8 67.8 60.19 117.54 8.8l-3.46 66.92z"/>
         <path fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1.04" d="M120.47 80.6L68 104.44 15.53 80.6 11.59 9.32l56.46 51.65 56.36-51.65-3.94 71.28z"/>
@@ -28,7 +29,8 @@
         <path d="M123.35 86.04L68 111.19 12.65 86.04l-4.16-75.2L67.8 60.19l59.71-49.35-4.16 75.2z"/>
         <path fill="#fff" d="M124.54 64.66L68 90.35 11.51 64.68l.58 11.24L68 101.33l55.91-25.41.63-11.26z"/>
     </svg>
-    <h2>Download</h2>
+    <h2 id="nav-dl">Download</h2>
+  </a>
 </div>
 
 <svg class="city" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14266 1366">
@@ -68,7 +70,7 @@
     </g>
     <g class="spotlight-content">
       <path fill="#fff" d="M801.18 577.36h525.41v14.2H801.18z"/>
-        <text class="intro-heading" dx="820" dy="570">PAPER HEROES</text>
+        <text class="intro-heading" dx="810" dy="570">PAPER HEROES</text>
         <path fill="#fff" d="M1170.61 377.8l-107.13 52.05-107.13-52.05-8.04-155.58 114.7 119.47 115.64-119.47-8.04 155.58z"/>
         <path fill="#fff" d="M1185.46 389.13l-121.98 55.43-121.98-55.43-9.16-165.7 131.25 120.07 131.03-120.07-9.16 165.7z"/>
         <path fill="#fff" d="M1170.89 377.8l-107.12 52.05-107.13-52.05-8.04-155.58 114.7 119.47 115.64-119.47-8.05 155.58z"/>
@@ -95,10 +97,12 @@
     </g>
 
     <g class="btn-svg">
+      <a xlink:href="" download>
         <path class="btn-fill" fill="#fff" stroke="red" stroke-miterlimit="10" stroke-width="9.6" d="M940.64 818.03h246.49v87.62H940.64z"/>
         <text class="btn-text" x="994" y="875">
         Get ‘em!
         </text>
+      </a>
     </g>
 
     <!-- EVERYTHING MAN -->
@@ -305,7 +309,7 @@
       <path fill="#ffda00" d="M6565.85 300.2H6992v245.97h-426.15z"/>
        <text transform="translate(6582.43 351.82)">
         <tspan class="bio-title">Red Flame...</tspan>
-        <tspan class="bio" x="0" y="40">Who needs a flamethrower when</tspan>
+        <tspan class="bio" x="0" y="45">Who needs a flamethrower when</tspan>
         <tspan class="bio" x="0" dy="38">you <tspan class="bold">are</tspan> a flamethrower?</tspan>
         <tspan class="stat-title" x="0" dy="50">Strength:</tspan><tspan> FIRE</tspan>
         <tspan class="stat-title" x="0" dy="45">Weakness:</tspan><tspan> Rain</tspan>
@@ -385,11 +389,11 @@
     </g>
 
     <g class="text-box">
-      <path d="M6876 968.34h478.94v227.05H6876z"/>
-      <path fill="#ffda00" d="M6887.06 955.39H7366v227.05h-478.94z"/>
+      <path d="M6876 968.34h519.01v227.05H6876z"/>
+      <path fill="#ffda00" d="M6887.99 955.39H7407v227.05h-519.01z"/>
        <text transform="translate(6902.43 1010)">
         <tspan class="bio-title">Hammer Head...</tspan>
-        <tspan class="bio" x="0" y="40">Stuck? Have you tried hitting it harder?</tspan>
+        <tspan class="bio" x="0" y="45">Stuck? Have you tried hitting it harder?</tspan>
         <tspan class="stat-title" x="0" dy="50">Strength:</tspan><tspan> Smashing things</tspan>
         <tspan class="stat-title" x="0" dy="45">Weakness:</tspan><tspan> Throwing his only weapon</tspan>
       </text>
@@ -402,7 +406,7 @@
       <path fill="#ffda00" d="M7174.51 620.39H7716v245.97h-541.49z"/>
        <text transform="translate(7190 668)">
         <tspan class="bio-title">Pyro...</tspan>
-        <tspan class="bio" x="0" y="40">Why be a genius inventor prodigy when you </tspan>
+        <tspan class="bio" x="0" y="45">Why be a genius inventor prodigy when you </tspan>
         <tspan class="bio" x="0" dy="38">can be a <tspan class="bold">mad</tspan> genius invetor prodigy?</tspan>
         <tspan class="stat-title" x="0" dy="50">Strength:</tspan><tspan> Setting stuff on fire</tspan>
         <tspan class="stat-title" x="0" dy="45">Weakness:</tspan><tspan> Setting stuff on fire</tspan>
@@ -534,9 +538,7 @@
           <path d="M8319.28 413.67c-7.84 25.82-36 40.65-62.83 33.12s-42.29-34.57-34.45-60.4 36-40.65 62.83-33.12 42.29 34.58 34.45 60.4z" opacity=".15"/>
           <path d="M8316 410.92c-7.14 23.51-32.75 37-57.21 30.16s-38.5-31.48-31.37-55 32.75-37 57.21-30.16 38.46 31.48 31.37 55z" fill="#fff" stroke="red" stroke-miterlimit="10" stroke-width="6.51"/>
           <path d="M8305.93 408.11c-5.52 18.19-25.34 28.64-44.27 23.33s-29.79-24.36-24.27-42.55 25.34-28.64 44.27-23.33 29.8 24.35 24.27 42.55z" fill="red" stroke="red" stroke-miterlimit="10" stroke-width="3.62"/>
-          <text transform="matrix(1 .28 -.29 .96 8239.52 400.29)" font-size="26.98" fill="#fff" font-family="Liquorstore-Regular,Liquorstore">
-          BOOM
-          </text>
+          <text transform="matrix(1 .28 -.29 .96 8239.52 400.29)">BOOM</text>
           <path fill="#919191" d="M8304.3 465.39l-1.55 5.07-98.58-27.64 1.55-5.08 98.58 27.65z"/>
         </g>
       </g>
@@ -569,11 +571,11 @@
     </g>
 
     <g class="text-box">
-      <path d="M8785 746.84h476v227.05h-476z"/>
-      <path fill="#ffda00" d="M8796 733.89h476v227.05h-476z"/>
+      <path d="M8785 747.98h476v245.97h-476z"/>
+      <path fill="#ffda00" d="M8796 733.95h476v245.97h-476z"/>
        <text transform="translate(8811.43 780.82)">
         <tspan class="bio-title">Dr. Insanity...</tspan>
-        <tspan class="bio" x="0" y="40">He’s not all bad, just misunderstood. </tspan>
+        <tspan class="bio" x="0" y="45">He’s not all bad, just misunderstood. </tspan>
         <tspan class="bio" x="0" dy="38">Actually, no, he’s all bad.</tspan>
         <tspan class="stat-title" x="0" dy="50">Strength:</tspan><tspan> Cyborg body</tspan>
         <tspan class="stat-title" x="0" dy="45">Weakness:</tspan><tspan> Is a head in a jar</tspan>
@@ -633,7 +635,7 @@
       <path fill="#ffda00" d="M9541.8 545.89H9966v245.97h-424.2z"/>
        <text transform="translate(9558.43 594.82)">
         <tspan class="bio-title">Iron Plate...</tspan>
-        <tspan class="bio" x="0" y="40">Money is a superpower too, </tspan>
+        <tspan class="bio" x="0" y="45">Money is a superpower too, </tspan>
         <tspan class="bio" x="0" dy="38">it can <tspan class="bold">build</tspan> superpowers.</tspan>
         <tspan class="stat-title" x="0" dy="50">Strength:</tspan><tspan> Unlimited resources</tspan>
         <tspan class="stat-title" x="0" dy="45">Weakness:</tspan><tspan> Magnets</tspan>
@@ -677,7 +679,7 @@
       <path fill="#ffda00" d="M10408.5 1092.39h584.5v227.05h-584.5z"/>
        <text transform="translate(10421.43 1150)">
         <tspan class="bio-title">Fury Fist...</tspan>
-        <tspan class="bio" x="0" y="40">There is no problem punching can’t solve.</tspan>
+        <tspan class="bio" x="0" y="45">There is no problem punching can’t solve.</tspan>
         <tspan class="stat-title" x="0" dy="50">Strength:</tspan><tspan> Looking awesome</tspan>
         <tspan class="stat-title" x="0" dy="45">Weakness:</tspan><tspan> Lots of muscles, not so much armour</tspan>
       </text>
@@ -809,7 +811,7 @@
       <path fill="#ffda00" d="M10660.64 506.7H11078v245.97h-417.36z"/>
        <text transform="translate(10680 555)">
         <tspan class="bio-title">Lord Universe...</tspan>
-        <tspan class="bio" x="0" y="40">Justifying crime with a tragic </tspan>
+        <tspan class="bio" x="0" y="45">Justifying crime with a tragic </tspan>
         <tspan class="bio" x="0" dy="38">backstory since 1939.</tspan>
         <tspan class="stat-title" x="0" dy="50">Strength:</tspan><tspan> Evil laugh</tspan>
         <tspan class="stat-title" x="0" dy="45">Weakness:</tspan><tspan> Monologues</tspan>
@@ -877,7 +879,7 @@
       <path fill="#ffda00" d="M12077.57 965.89H12535v227.05h-457.43z"/>
        <text transform="translate(12093.43 1020)">
         <tspan class="bio-title">Side Staff....</tspan>
-        <tspan class="bio" x="0" y="40">Never underestimate the sidekick.</tspan>
+        <tspan class="bio" x="0" y="45">Never underestimate the sidekick.</tspan>
         <tspan class="stat-title" x="0" dy="50">Strength:</tspan><tspan> Providing exposition</tspan>
         <tspan class="stat-title" x="0" dy="45">Weakness:</tspan><tspan> Unnecessary staff twirls</tspan>
       </text>
@@ -890,7 +892,7 @@
       <path fill="#ffda00" d="M12319.3 606.39h575.7v245.97h-575.7z"/>
        <text transform="translate(12332.43 656.82)">
         <tspan class="bio-title">Miss Appear....</tspan>
-        <tspan class="bio" x="0" y="40">Does it matter what your powers do as long </tspan>
+        <tspan class="bio" x="0" y="45">Does it matter what your powers do as long </tspan>
         <tspan class="bio" x="0" dy="38">as you look cool waving your hands around?</tspan>
         <tspan class="stat-title" x="0" dy="50">Strength:</tspan><tspan> Undefinable mind powers</tspan>
         <tspan class="stat-title" x="0" dy="45">Weakness:</tspan><tspan> Bad CGI</tspan>
@@ -1037,7 +1039,7 @@
         </svg>
 
         <p>Create your own story with the superheroic Paper Heroes! Grab all 12 characters in PNG, SVG, and JPG.</p>
-        <a class="btn btn-white" href="">Get ‘Em!</a>
+        <a class="btn btn-white" href="" download>Get ‘Em!</a>
 
         <svg class="x-btn" id="close-overlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 196">
           <polygon fill="#fff" fill-rule="evenodd" points="155.942 0 98 57.942 40.058 0 0 40.059 57.942 98 0 155.942 40.058 196 98 138.059 155.942 196 196 155.942 138.059 98 196 40.059"/>
@@ -1046,11 +1048,12 @@
 
   </svg>
 
-  <script type="text/javascript" src="js/jquery-3.2.1.js"></script>     
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!--<script type="text/javascript" src="js/jquery-3.2.1.js"></script>--> 
   <script type="text/javascript" src="js/TweenMax.min.js"></script>     
   <script type="text/javascript" src="js/ScrollMagic.min.js"></script>
   <script type="text/javascript" src="js/plugins/animation.gsap.min.js"></script>
-  <script type="text/javascript" src="js/plugins/debug.addIndicators.min.js"></script>
+  <!--<script type="text/javascript" src="js/plugins/debug.addIndicators.min.js"></script>-->
   <script type='text/javascript' src='js/main.js'></script>   
 
 </body>
