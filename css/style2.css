@@ -23,7 +23,7 @@ body {
 
 
 /* TYPOGRAPHY */
-a {
+.overlay a {
     text-decoration: none;
     font-family: "liquor-store", sans-serif; 
     color: #000; 
@@ -32,37 +32,28 @@ a {
 
 p {
     font-style: italic; 
-    font-size: 1em;  
+    font-size: 1.4em;  
     line-height: 1.618em;      
 }
 
-h1, h2, h3, h4 {
-    font-family: "liquor-store", sans-serif;
-}
-
-h3 {
-    font-style: italic;
-    font-size: 1.618em;
-    margin-bottom: 0.382em;
-}
-
 .text-box {
-    font-style: italic; 
     font-size: 1.618em;  
     line-height: 1.618em;      
 }
 
 .bio-title {
     font-family: "liquor-store", sans-serif;
+    font-style: italic;
     font-size: 150%;
+}
+
+.bio {
+    font-style: italic;
+    font-size: 105%;
 }
 
 .bold {
     font-weight: 800;
-}
-
-.stats {
-    font-style: normal;
 }
 
 .stat-title {
@@ -75,24 +66,24 @@ h3 {
 .nav {
     position: fixed;
     z-index: 100;
-    display: flex;
-    align-items: center;
 }
 
 .nav h2 {
+    font-family: "liquor-store", sans-serif;
     font-size: 1.618em;
     color: red;
+    position: absolute;
+    left: 4em;
+    top: 1.35em;
 }
 
 #logo-nav {
     margin: 1em;
     width: 5em;
-    transition: all 0.2s;
 }
 
-#logo-nav:hover {
+#logo-nav:hover, #nav-dl:hover {
     cursor: pointer;
-    transform: scale(1.1);
 }
 
 
@@ -111,6 +102,7 @@ h3 {
     text-align: center;
     border: 0.236em solid #fff;
     transition: all 0.15s ease-in;
+    margin-top: 1.618em;
 }
 
 .btn-white:hover {
@@ -139,6 +131,12 @@ h3 {
     cursor: pointer;
 }
 
+#remote text {
+    font-size: 1.7em;
+    fill: #fff;
+    font-family: "liquor-store", sans-serif; 
+}
+
 
 
 /* OVERLAY */
@@ -156,7 +154,7 @@ h3 {
 .logo {
     width: 40%;
     display: block;
-    margin: 3em auto 0.618em auto;
+    margin: 1em auto 0.618em auto;
 }
 
 .title-text {
@@ -166,7 +164,7 @@ h3 {
 }
 
 .intro-heading {
-    font-size: 4.6em;
+    font-size: 5.8em;
     font-family: "liquor-store", sans-serif;    
 }
 
@@ -181,7 +179,6 @@ h3 {
     margin: 0em auto 1em auto;
     white-space: normal;
     text-align: center;
-    font-size: 110%;
     width: 65%;
     max-width: 700px;
 }
@@ -189,11 +186,39 @@ h3 {
 .x-btn {
     display: block;
     margin: 1.618em auto 2.618em auto;
-    width: 3.5em;  
+    width: 3em;  
     cursor: pointer;  
     transition: all 0.25s ease-in;
 }
 
 .x-btn:hover {
     transform: rotate(360), scale(1.5);
+}
+
+
+@media (max-width: 60em) { 
+    .city {
+        display: none;
+    } 
+
+    .nav {
+        display: none;
+    }
+
+    .x-btn {
+        display: none;
+    }
+
+    .overlay {
+        display: block;
+    }
+
+    .logo {
+        width: 80%;
+    }
+
+    .overlay p {
+        width: 90%;
+        font-size: 1.2em;
+    }
 }
