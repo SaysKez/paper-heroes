@@ -1,6 +1,6 @@
 //Flip scrollwheel
 //Thanks Tim! : http://tim-davidson.com/
-
+if(window.innerWidth > 959){
 (function() {
     function horizontal(e) {
       e = window.event || e;
@@ -60,7 +60,6 @@ function MouseWheelHandler(e) {
 }
 */
 
-if(window.innerWidth > 959){
 var overlay = new ScrollMagic.Controller({vertical: false});
 
 //animation.
