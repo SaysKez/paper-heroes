@@ -222,6 +222,10 @@ a.credits:hover {
         transform: scale(1);
     }
 
+    div.overlay {
+        right:0;
+    }
+
     .logo {
         width: 80%;
     }
