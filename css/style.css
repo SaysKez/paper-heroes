@@ -23,7 +23,7 @@ body {
 }
 
 /* TYPOGRAPHY */
-.overlay a {
+.overlay a, .overlay-responsive a {
     text-decoration: none;
     font-family: "liquor-store", sans-serif; 
     color: #000; 
@@ -122,6 +122,10 @@ p {
 }
 
 /* OVERLAY */
+.overlay-responsive {
+    display: none;
+}
+
 div.overlay {
     display: none;
     position: fixed;
@@ -205,6 +209,10 @@ a.credits:hover {
 
 
 @media (max-width: 60em) { 
+    body {
+        white-space: normal;
+    }
+
     .city {
         display: none;
     } 
@@ -213,25 +221,21 @@ a.credits:hover {
         display: none;
     }
 
-    .x-btn {
-        display: none;
-    }
-
-    .overlay {
-        display: block;
-        transform: scale(1);
-    }
-
-    div.overlay {
-        right:0;
-    }
-
     .logo {
         width: 80%;
     }
 
-    .overlay p {
+    .overlay-responsive {
+        display: block;
+        background-color: red;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    .overlay-responsive p {
         width: 80%;
+        margin: auto;
+        text-align: center;
         font-size: 1.2em;
     }
 }

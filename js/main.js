@@ -1,12 +1,12 @@
-//Flip scrollwheel
+//Flip scrollwheel so horizontal scroll triggers regardless of scroll direction
 //Thanks Tim! : http://tim-davidson.com/
-
+if(window.innerWidth > 959){
 (function() {
     function horizontal(e) {
       e = window.event || e;
       var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-      document.documentElement.scrollLeft -= (delta*22);
-      document.body.scrollLeft -= (delta*22);
+      document.documentElement.scrollLeft -= (delta*40);
+      document.body.scrollLeft -= (delta*40);
       e.preventDefault();
     }
     if (window.addEventListener) {
@@ -60,7 +60,6 @@ function MouseWheelHandler(e) {
 }
 */
 
-if(window.innerWidth > 959){
 var overlay = new ScrollMagic.Controller({vertical: false});
 
 //animation.
